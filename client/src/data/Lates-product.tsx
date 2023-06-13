@@ -10,7 +10,7 @@ const LatesProducts = [
   {
     id: "2",
     name: "Evolis Primacy 2 Simplex Expert Printer",
-    image: "/products/product1.png",
+    image: "/products/product2.png",
     rating: 5,
     category: "Evolis",
     price: 300,
@@ -18,7 +18,7 @@ const LatesProducts = [
   {
     id: "3",
     name: "Evolis Primacy 2 Simplex Expert Printer",
-    image: "/products/product1.png",
+    image: "/products/product2.png",
     rating: 5,
     category: "Evolis",
     price: 300,

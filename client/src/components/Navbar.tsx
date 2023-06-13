@@ -5,7 +5,7 @@ const Navbar: Component = () => {
   return (
     <div>
       <div>
-        <div class="px-20 navbar bg-base-200">
+        <div class="px-44 navbar bg-base-200">
           <div class="flex-1">
             <NavLink href="/">
               <img class="w-24" src="/images/logo.png" alt="Solid logo" />

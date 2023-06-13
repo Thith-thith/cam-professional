@@ -1,0 +1,68 @@
+const CoreProducts = [
+  {
+    id: "1",
+    name: "FujiFilm Apeos C2560 Color",
+    image: "/products/product1.png",
+    rating: 5,
+    category: "Evolis",
+    price: 300,
+  },
+  {
+    id: "2",
+    name: "FujiFilm Apeos C2560 Color",
+    image: "/products/product2.png",
+    rating: 5,
+    category: "Evolis",
+    price: 300,
+  },
+  {
+    id: "3",
+    name: "FujiFilm Apeos C2560 Color",
+    image: "/products/product2.png",
+    rating: 5,
+    category: "Evolis",
+    price: 300,
+  },
+  {
+    id: "4",
+    name: "CAM-TONER Ink 45",
+    image: "/products/product1.png",
+    rating: 5,
+    category: "Evolis",
+    price: 300,
+  },
+  {
+    id: "1",
+    name: "CAM-TONER Ink 45",
+    image: "/products/product1.png",
+    rating: 5,
+    category: "Evolis",
+    price: 300,
+  },
+  {
+    id: "2",
+    name: "CAM-TONER Ink 45",
+    image: "/products/product2.png",
+    rating: 5,
+    category: "Evolis",
+    price: 300,
+  },
+  {
+    id: "3",
+    name: "CAM-TONER Ink 45",
+    image: "/products/product2.png",
+    rating: 5,
+    category: "Evolis",
+    price: 300,
+  },
+  {
+    id: "4",
+    name: "CAM-TONER Ink 45",
+    image: "/products/product1.png",
+    rating: 5,
+    category: "Evolis",
+    price: 300,
+  },
+];
+
+export default CoreProducts;
