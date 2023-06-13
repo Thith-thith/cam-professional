@@ -47,7 +47,7 @@ const Footer: Component = () => {
               <NavLink class="text-sm" href="/about-us">
                 About
               </NavLink>
-              <NavLink class="text-sm mt-2.5 " href="/core-products">
+              <NavLink class="text-sm mt-2.5 " href="/contact-us">
                 Contact
               </NavLink>
               <NavLink class="text-sm mt-2.5" href="/lates-products">
