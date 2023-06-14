@@ -3,7 +3,7 @@ import { Component } from "solid-js";
 
 const Footer: Component = () => {
   return (
-    <div class="bg-base-300 mt-12">
+    <div class="bg-base-200 mt-12">
       <div class="px-44 py-14">
         <div class="grid grid-cols-4 gap-6">
           <div>

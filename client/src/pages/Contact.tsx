@@ -69,6 +69,68 @@ const Contact: Component<{}> = (props) => {
             We Are Always Available On Workday For You
           </p>
         </div>
+        <div class="mt-12">
+          <div class="grid grid-cols-2 px-72 gap-4">
+            <div class="bg-base-200 p-10">
+              <div class="flex justify-center">
+                <img class="w-12" src="/images/24-7.png" />
+              </div>
+              <div class="text-center mt-5 font-bold">
+                <p>Monday - Friday</p>
+                <p class="text-blue-900">(Public Holiday We Don't Work)</p>
+              </div>
+            </div>
+            <div class="bg-base-200 p-10">
+              <div class="flex justify-center">
+                <img class="w-12" src="/images/extra-time.png" />
+              </div>
+              <div class="text-center mt-5 font-bold">
+                <p>Monday - Friday</p>
+                <p class="text-blue-900">(Public Holiday We Don't Work)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-32">
+          <h1 class="text-center text-primary font-extrabold md:text-2xl w-96 m-auto">
+            Let's Meet
+          </h1>
+          <p class="mt-3 text-center  text-gray-600">
+            Our Connections Are Below
+          </p>
+          <div class="mt-12">
+            <div class="grid grid-cols-3 gap-4 px-44">
+              <div class="p-8">
+                <div>
+                  <div class="flex justify-center">
+                    <img class="w-14" src="/images/map.png" />
+                  </div>
+                  <p class="text-center mt-5 text-sm">
+                    #18C1, Tuek Thlar, Sen Sok, Phnom Penh Cambodia.​​
+                  </p>
+                </div>
+              </div>
+              <div class="p-8">
+                <div>
+                  <div class="flex justify-center">
+                    <img class="w-14" src="/images/phone.png" />
+                  </div>
+                  <p class="text-center mt-5 text-sm">023 884 789</p>
+                </div>
+              </div>
+              <div class="p-8">
+                <div>
+                  <div class="flex justify-center">
+                    <img class="w-14" src="/images/gmail.png" />
+                  </div>
+                  <p class="text-center mt-5 text-sm">
+                    mailto:info@camprotec.com.kh
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
