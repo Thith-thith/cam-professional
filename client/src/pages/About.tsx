@@ -1,5 +1,6 @@
-import { Component } from "solid-js";
-
+import { Component, For, Show } from "solid-js";
+import Members from "../data/Members";
+import MemberCard from "../components/Member-cart";
 const About: Component = () => {
   return (
     <div>
@@ -53,6 +54,73 @@ const About: Component = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="mt-32">
+          <h1 class="text-center text-primary font-extrabold md:text-2xl w-96 m-auto">
+            Our Vision, Mission and Policy
+          </h1>
+          <p class=" text-center  text-gray-600">
+            We Believe In Hard Work And Commitment
+          </p>
+        </div>
+        <div class="mt-12">
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-base-200 p-10 rounded">
+              <div class="flex justify-center">
+                <img class="w-12" src="/images/focus.png" />
+              </div>
+              <div class=" mt-3 ">
+                <p class="text-pink-600 font-bold text-center">Vision</p>
+                <p class="text-gray-600 mt-4">
+                  Becoming a perfect company in supplying products and
+                  technology services.
+                </p>
+              </div>
+            </div>
+            <div class="bg-base-200 p-10 rounded">
+              <div class="flex justify-center">
+                <img class="w-12" src="/images/mission.png" />
+              </div>
+              <div class=" mt-3 ">
+                <p class="text-pink-600 font-bold text-center">Mission</p>
+                <p class="text-gray-600 mt-4">
+                  Make customers peaceful and prosperous with the company’s use
+                  of service products.
+                </p>
+              </div>
+            </div>
+            <div class="bg-base-200 p-10 rounded">
+              <div class="flex justify-center">
+                <img class="w-12" src="/images/privacy-policy.png" />
+              </div>
+              <div class=" mt-3 ">
+                <p class="text-pink-600 font-bold text-center">Policies</p>
+                <p class="text-gray-600 mt-4">
+                  1. All company employees and professionals are the number one
+                  property, then customers...
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-32">
+          <h1 class="text-center text-primary font-extrabold md:text-2xl w-96 m-auto">
+            Meeting Our Amazing Team
+          </h1>
+          <p class=" text-center  text-gray-600">
+            We Couldn't Do It Without Them
+          </p>
+          <div class="grid grid-cols-3 gap-4 mt-12">
+            <For each={Members}>
+              {(members) => {
+                return (
+                  <Show when={members} fallback={<p>Loading...</p>}>
+                    <MemberCard props={members} />
+                  </Show>
+                );
+              }}
+            </For>
           </div>
         </div>
       </div>

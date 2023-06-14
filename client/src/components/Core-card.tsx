@@ -1,4 +1,5 @@
-import { Component } from "solid-js";
+import { Component, Show } from "solid-js";
+import { A } from "@solidjs/router";
 
 export type CoreProducts = {
   id: string;
@@ -13,9 +14,9 @@ interface Props {
 }
 const CoreCard: Component<Props> = ({ props }) => {
   return (
-    <div>
-      <a>
-        <div class="card bg-base-200 h-full rounded-none">
+    <A href="/about-us">
+      <div class="card bg-base-200 h-full rounded-none">
+        <Show when={props} fallback={<p>Loading...</p>}>
           <figure class="px-10 pt-10">
             <img src={props.image} alt="Shoes" class="h-36" />
           </figure>
@@ -52,9 +53,9 @@ const CoreCard: Component<Props> = ({ props }) => {
               Add to cart
             </button>
           </div>
-        </div>
-      </a>
-    </div>
+        </Show>
+      </div>
+    </A>
   );
 };
 
