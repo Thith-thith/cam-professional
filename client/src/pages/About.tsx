@@ -124,6 +124,7 @@ const About: Component = () => {
           </div>
         </div>
       </div>
+      {/* <div class="footer-bg-about-img">d</div> */}
     </div>
   );
 };

@@ -37,3 +37,9 @@ body {
   background-size: cover;
   height: 60vh;
 }
+.footer-bg-about-img {
+  background-image: url("/images/wave-haikei.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1000px;
+}
