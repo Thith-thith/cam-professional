@@ -1,7 +1,10 @@
 import { Component, For, Show } from "solid-js";
 import Members from "../data/Members";
 import MemberCard from "../components/Member-cart";
+import { useCartContext } from "../context/Cart-context";
 const About: Component = () => {
+  // const { item } = useCartContext();
+  // console.log(items, "item");
   return (
     <div>
       <div>
@@ -10,6 +13,7 @@ const About: Component = () => {
             <div class="text-center relative top-52 left-0">
               <h1 class="text-6xl text-[#98A2AE] font-bold">About Us</h1>
               <p>Behind At Our CAM</p>
+              {/* {items ? <div>{items.id}</div> : "no"} */}
             </div>
           </div>
         </div>

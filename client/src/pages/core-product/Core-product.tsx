@@ -14,7 +14,8 @@ const CoreProduct: Component<{}> = (props) => {
           {(CoreProducts) => {
             return (
               <div>
-                <CoreCard props={CoreProducts} />
+                {/* <CoreCard props={CoreProducts} /> */}
+                <CoreCard product={CoreProducts} />
               </div>
             );
           }}
