@@ -1,3 +1,43 @@
+// import {
+//   createContext,
+//   createEffect,
+//   createSignal,
+//   useContext,
+// } from "solid-js";
+
+// type Products = {
+//   id: string;
+//   name: string;
+//   image: string;
+//   rating: number;
+//   category: string;
+//   price: number;
+//   quatity: number;
+// };
+
+// interface ContextProps {
+//   items: Products[] | null;
+//   setItems: (product: Products) => void;
+// }
+
+// const CartContext = createContext<ContextProps>();
+
+// export function CartContextProvider(props: any) {
+//   const [items, setItems] = createSignal<Products[] | null>(null);
+
+//   // Save cart to localStorage when it changes
+//   createEffect(() => {
+//     localStorage.setItem("cart", JSON.stringify(items()));
+//   });
+
+//   return (
+//     <CartContext.Provider value={{ items: items(), setItems }}>
+//       {props.children}
+//     </CartContext.Provider>
+//   );
+// }
+// export const useCartContext = () => useContext(CartContext)!;
+
 import {
   createContext,
   createEffect,
@@ -32,6 +72,7 @@ const CartContext = createContext<CartContextValue>();
 
 export function CartContextProvider(props: { children: any }) {
   const [cartItems, setCartItems] = createSignal<CartItem[]>([]);
+  // const [cartItems, setCartItems] = createSignal<CartItem[] | null>(null);
 
   // Save cart to localStorage when it changes
   createEffect(() => {
@@ -39,6 +80,12 @@ export function CartContextProvider(props: { children: any }) {
     if (storedCartItems) {
       setCartItems(JSON.parse(storedCartItems));
     }
+  });
+  const updateLocalStorage = () => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems()));
+  };
+  createEffect(() => {
+    updateLocalStorage();
   });
 
   const addToCart = (product: Product) => {
@@ -54,7 +101,8 @@ export function CartContextProvider(props: { children: any }) {
       const updatedItems = [...prevItems, newItem];
       return updatedItems;
     });
-    localStorage.setItem("cartItems", JSON.stringify(cartItems()));
+    updateLocalStorage();
+    // localStorage.setItem("cartItems", JSON.stringify(cartItems()));
   };
   const removeFromCart = (productId: string) => {
     setCartItems((prevItems) => {
