@@ -1,74 +1,11 @@
-// import {
-//   createContext,
-//   createEffect,
-//   createSignal,
-//   useContext,
-// } from "solid-js";
-
-// type Products = {
-//   id: string;
-//   name: string;
-//   image: string;
-//   rating: number;
-//   category: string;
-//   price: number;
-//   quatity: number;
-// };
-
-// interface ContextProps {
-//   items: Products[] | null;
-//   setItems: (product: Products) => void;
-// }
-
-// const CartContext = createContext<ContextProps>();
-
-// export function CartContextProvider(props: any) {
-//   const [items, setItems] = createSignal<Products[] | null>(null);
-
-//   // Save cart to localStorage when it changes
-//   createEffect(() => {
-//     localStorage.setItem("cart", JSON.stringify(items()));
-//   });
-
-//   return (
-//     <CartContext.Provider value={{ items: items(), setItems }}>
-//       {props.children}
-//     </CartContext.Provider>
-//   );
-// }
-// export const useCartContext = () => useContext(CartContext)!;
-
 import {
   createContext,
   createEffect,
   createSignal,
+  onMount,
   useContext,
 } from "solid-js";
 
-// type Products = {
-//   id: string;
-//   name: string;
-//   image: string;
-//   rating: number;
-//   category: string;
-//   price: number;
-//   quatity: number;
-// };
-
-// type CartItem = {
-//   product: Products;
-//   quantity: number;
-// };
-
-// type Cart = {
-//   items: CartItem[];
-// };
-
-// const CartContext = createContext<Cart | undefined>();
-
-// export function CartContextProvider(props: any) {
-//   const [cart, setCart] = createSignal<Cart[]>([]);
-//   const [cart, setCart] = createSignal<Cart>({ items: [] });
 type Product = {
   id: string;
   name: string;
@@ -76,7 +13,7 @@ type Product = {
   rating: number;
   category: string;
   price: number;
-  quatity: number;
+  quantity: number;
 };
 
 type CartItem = {
@@ -86,29 +23,58 @@ type CartItem = {
 
 type CartContextValue = {
   cartItems: CartItem[];
-  setCartItems: (cart: CartItem) => void;
-  //   addToCart: (product: Product) => void;
+  cart: CartItem[];
+  addToCart: (product: Product) => void;
+  removeFromCart: (productId: string) => void;
 };
 
 const CartContext = createContext<CartContextValue>();
 
-export function CartContextProvider(props: any) {
+export function CartContextProvider(props: { children: any }) {
   const [cartItems, setCartItems] = createSignal<CartItem[]>([]);
-
-  //   createEffect(() => {
-  //     const storedCartItems = localStorage.getItem("cartItems");
-  //     if (storedCartItems) {
-  //       setCartItems(JSON.parse(storedCartItems));
-  //     }
-  //   });
 
   // Save cart to localStorage when it changes
   createEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartItems()));
+    const storedCartItems = localStorage.getItem("cartItems");
+    if (storedCartItems) {
+      setCartItems(JSON.parse(storedCartItems));
+    }
   });
 
+  const addToCart = (product: Product) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find(
+        (item) => item.product.id.toString() === product.id.toString()
+      );
+      if (existingItem) {
+        existingItem.quantity++;
+        return prevItems;
+      }
+      const newItem: CartItem = { product, quantity: 1 };
+      const updatedItems = [...prevItems, newItem];
+      return updatedItems;
+    });
+    localStorage.setItem("cartItems", JSON.stringify(cartItems()));
+  };
+  const removeFromCart = (productId: string) => {
+    setCartItems((prevItems) => {
+      const updatedItems = prevItems.filter(
+        (item) => item.product.id !== productId
+      );
+      return updatedItems;
+    });
+    //  updateLocalStorage();
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems: cartItems(), setCartItems }}>
+    <CartContext.Provider
+      value={{
+        cartItems: cartItems(),
+        addToCart,
+        removeFromCart,
+        cart: cartItems(),
+      }}
+    >
       {props.children}
     </CartContext.Provider>
   );

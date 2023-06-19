@@ -1,4 +1,4 @@
-import { Component, Show } from "solid-js";
+import { Component, Show, createEffect } from "solid-js";
 import { A } from "@solidjs/router";
 import { useCartContext } from "../context/Cart-context";
 
@@ -13,26 +13,11 @@ type Product = {
 };
 
 const CoreCard: Component<{ product: Product }> = (props) => {
-  const { cartItems, setCartItems } = useCartContext();
-  console.log(props?.product, "item");
-
-  const addToCart = (item: any) => {
-    console.log(item, "hello");
-    // if (cartItems) {
-    //   const exist = cartItems.find(
-    //     (item) => item.product.id === props.product.id
-    //   );
-    //   if (exist) {
-    //     exist.quantity++;
-    //   } else {
-    //     const newItem: CartItem = { product: props.product, quantity: 1 };
-    //     const updatedItems: any = [...item, newItem];
-    //     setCartItems(updatedItems);
-    //     // setCartItems([...item, newItem]);
-    //   }
-    // }
+  const { cartItems, addToCart } = useCartContext();
+  console.log(cartItems, "carat");
+  const handleAddTocart = (product: Product) => {
+    addToCart(product);
   };
-
   return (
     // <A href="/about-us">
     <div class="card bg-base-200 h-full rounded-none">
@@ -72,7 +57,7 @@ const CoreCard: Component<{ product: Product }> = (props) => {
         </div>
         <div class="flex justify-center">
           <button
-            onClick={() => addToCart(props?.product)}
+            onClick={() => handleAddTocart(props.product)}
             class="bg-primary py-3 text-base-200 text-center w-full"
           >
             Add to cart
