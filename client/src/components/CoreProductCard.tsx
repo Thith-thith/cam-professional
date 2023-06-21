@@ -17,6 +17,12 @@ const CoreCard: Component<{ product: Product }> = (props) => {
   const handleAddTocart = (product: Product) => {
     addToCart(product);
   };
+  createEffect(() => {
+    console.log(
+      cartItems.map((res) => res.quantity),
+      "cartdd"
+    );
+  });
   return (
     // <A href="/about-us">
     <div class="card bg-base-200 h-full rounded-none">
@@ -56,7 +62,7 @@ const CoreCard: Component<{ product: Product }> = (props) => {
         </div>
         <div class="flex justify-center">
           <button
-            onClick={() => addToCart(props.product)}
+            onClick={() => handleAddTocart(props.product)}
             class="bg-primary py-3 text-base-200 text-center w-full"
           >
             Add to cart
