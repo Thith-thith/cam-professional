@@ -1,6 +1,7 @@
-import { Component, Show, createEffect } from "solid-js";
+import { Component, Show, createEffect, createSignal } from "solid-js";
 import { A } from "@solidjs/router";
 import { useCartContext } from "../context/CartContext";
+import { createStore } from "solid-js/store";
 
 type Product = {
   id: string;
@@ -11,18 +12,22 @@ type Product = {
   price: number;
   quantity: number;
 };
+type Cart = {
+  cartLocal: Product;
+  quantity: number;
+};
 
 const CoreCard: Component<{ product: Product }> = (props) => {
   const { cartItems, addToCart } = useCartContext();
+  const [cartLocal, setCartLocal] = createStore<Cart[]>([]);
   const handleAddTocart = (product: Product) => {
     addToCart(product);
   };
-  createEffect(() => {
-    console.log(
-      cartItems.map((res) => res.quantity),
-      "cartdd"
-    );
-  });
+  const isInCart = () => {
+    const data = cartItems.some((item) => item.product.id === props.product.id);
+    return data;
+  };
+
   return (
     // <A href="/about-us">
     <div class="card bg-base-200 h-full rounded-none">
@@ -65,7 +70,9 @@ const CoreCard: Component<{ product: Product }> = (props) => {
             onClick={() => handleAddTocart(props.product)}
             class="bg-primary py-3 text-base-200 text-center w-full"
           >
-            Add to cart
+            {/* {cartLocal().quantity} */}
+            {/* Add to cart */}
+            {isInCart() ? "View Cart" : "Add to Cart"}
           </button>
         </div>
       </Show>
