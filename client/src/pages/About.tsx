@@ -1,7 +1,7 @@
 import { Component, For, Show } from "solid-js";
 import Members from "../data/Members";
 import MemberCard from "../components/Member-cart";
-import { useCartContext } from "../context/Cart-context";
+import { useCartContext } from "../context/CartContext";
 const About: Component = () => {
   // const { item } = useCartContext();
   // console.log(items, "item");

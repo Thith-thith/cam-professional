@@ -46,15 +46,13 @@ import {
   createSignal,
   useContext,
 } from "solid-js";
+import { createStore } from "solid-js/store";
 
 type Product = {
   id: string;
   name: string;
   image: string;
-  rating: number;
-  category: string;
   price: number;
-  quantity: number;
 };
 
 type CartItem = {
@@ -63,11 +61,7 @@ type CartItem = {
 };
 
 type CartContextValue = {
-  count: Accessor<number>;
-  setCount: Setter<number>;
-  changeCount: () => void;
   cartItems: CartItem[];
-  cart: CartItem[];
   addToCart: (product: Product) => void;
   removeFromCart: (productId: string) => void;
 };
@@ -75,35 +69,20 @@ type CartContextValue = {
 const CartContext = createContext<CartContextValue>();
 
 export function CartContextProvider(props: { children: any }) {
-  const [cartItems, setCartItems] = createSignal<CartItem[]>([]);
-  const [count, setCount] = createSignal(1);
+  const [cartItems, setCartItems] = createStore<CartItem[]>([]);
   // const [cartItems, setCartItems] = createSignal<CartItem[] | null>(null);
 
-  console.log(count(), "count");
-  // Save cart to localStorage when it changes
+  // ==================Load cart items from local storage on component mount=====================
   createEffect(() => {
     const storedCartItems: any = localStorage.getItem("cartItems");
     if (storedCartItems) {
       setCartItems(JSON.parse(storedCartItems));
     }
   });
-  const updateLocalStorage = () => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems()));
-  };
-
+  // ================Update local storage whenever cart items change================
   createEffect(() => {
-    const storeCount: any = localStorage.setItem("count", count());
-    if (storeCount) {
-      localStorage.setItem("count", storeCount);
-    }
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   });
-  createEffect(() => {
-    console.log(cartItems(), "cart");
-    updateLocalStorage();
-  });
-  const changeCount = () => {
-    setCount(3);
-  };
 
   const addToCart = (product: Product) => {
     setCartItems((prevItems) => {
@@ -118,8 +97,7 @@ export function CartContextProvider(props: { children: any }) {
       const updatedItems = [...prevItems, newItem];
       return updatedItems;
     });
-    updateLocalStorage();
-    // localStorage.setItem("cartItems", JSON.stringify(cartItems()));
+    // localStorage.setItem("cartItems", JSON.stringify(cartItem()));
   };
   const removeFromCart = (productId: string) => {
     setCartItems((prevItems) => {
@@ -128,19 +106,15 @@ export function CartContextProvider(props: { children: any }) {
       );
       return updatedItems;
     });
-    updateLocalStorage();
+    // localStorage.setItem("cartItems", JSON.stringify(cartItem()));
   };
 
   return (
     <CartContext.Provider
       value={{
-        cartItems: cartItems(),
+        cartItems,
         addToCart,
         removeFromCart,
-        cart: cartItems(),
-        count,
-        setCount,
-        changeCount,
       }}
     >
       {props.children}

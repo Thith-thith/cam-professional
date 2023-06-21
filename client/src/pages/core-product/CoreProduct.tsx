@@ -1,6 +1,7 @@
-import { Component, For } from "solid-js";
+import { Component, For, createEffect } from "solid-js";
 import CoreProducts from "../../data/Core-Product";
-import CoreCard from "../../components/Core-card";
+import CoreCard from "../../components/CoreProductCard";
+import { useCartContext } from "../../context/CartContext";
 
 const CoreProduct: Component<{}> = (props) => {
   return (
@@ -14,7 +15,6 @@ const CoreProduct: Component<{}> = (props) => {
           {(CoreProducts) => {
             return (
               <div>
-                {/* <CoreCard props={CoreProducts} /> */}
                 <CoreCard product={CoreProducts} />
               </div>
             );

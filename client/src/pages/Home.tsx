@@ -1,6 +1,6 @@
 import { Component } from "solid-js";
-import LatesProduct from "./latest-product/Latest-products";
-import CoreProduct from "./core-product/Core-product";
+import LatesProduct from "./latest-product/LatestProducts";
+import CoreProduct from "./core-product/CoreProduct";
 import News from "./news/news";
 
 const Home: Component = () => {

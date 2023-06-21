@@ -1,11 +1,13 @@
 import { Component, createSignal } from "solid-js";
 import { NavLink } from "@solidjs/router";
+import { useCartContext } from "../context/CartContext";
 
 const Navbar: Component = () => {
+  const { cartItems } = useCartContext();
   return (
     <div>
       <div>
-        <div class="px-44 navbar bg-base-200">
+        <div class="px-44 navbar bg-base-200 sticky z-10 backdrop-blur-3xl opacity-90 ">
           <div class="flex-1">
             <NavLink href="/">
               <img class="w-24" src="/images/logo.png" alt="Solid logo" />
@@ -28,14 +30,19 @@ const Navbar: Component = () => {
                 <NavLink href="/favorite">Favorite</NavLink>
               </div>
             </div>
-            <div class="flex items-center">
-              <div>
-                <img class="w-5" src="/images/cart.png" />
-              </div>
-              <NavLink href="/cart" class="ml-2">
+
+            <NavLink href="/cart" class="ml-2">
+              <div class="flex items-center space-x-2">
+                <div class="indicator">
+                  <img class="w-5" src="/images/cart.png" />
+                  <span class="badge badge-xs badge-primary indicator-item">
+                    {cartItems.length}
+                  </span>
+                </div>
                 <p>Cart</p>
-              </NavLink>
-            </div>
+              </div>
+            </NavLink>
+
             <div class="dropdown dropdown-end">
               <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                 <div class="w-10 rounded-full">

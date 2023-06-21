@@ -1,6 +1,6 @@
 import { Component, Show, createEffect } from "solid-js";
 import { A } from "@solidjs/router";
-import { useCartContext } from "../context/Cart-context";
+import { useCartContext } from "../context/CartContext";
 
 type Product = {
   id: string;
@@ -56,7 +56,7 @@ const CoreCard: Component<{ product: Product }> = (props) => {
         </div>
         <div class="flex justify-center">
           <button
-            onClick={() => handleAddTocart(props.product)}
+            onClick={() => addToCart(props.product)}
             class="bg-primary py-3 text-base-200 text-center w-full"
           >
             Add to cart
