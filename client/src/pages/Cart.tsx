@@ -1,23 +1,35 @@
 import { Component, createEffect, createSignal } from "solid-js";
 import { useCartContext } from "../context/Cart-context";
+import { useGlobalContext } from "../context/Test-context";
 
-type Count = {
-  count: number;
+type Name = {
+  name: string;
 };
 
 const Cart: Component = () => {
-  const { cartItems } = useCartContext();
-  //   const [count, setCount] = createSignal(0);
-  //   console.log(count(), "count");
-  //   createEffect(() => {
-  //     return localStorage.setItem("count", count());
-  //   });
+  const { cartItems, count, setCount, changeCount } = useCartContext();
+  //   const { count, setCount } = useGlobalContext();
+  const handleCount = () => {
+    setCount(count() + 1);
+  };
+  createEffect(() => {
+    console.log(count());
+    console.log(cartItems, "cartITem");
+  });
+
   return (
     <div>
       <div class="px-44">
+        {count() === 3 ? "home" : "house"}
         <div>
           <h2>Cart</h2>
-          {/* <button onClick={() => setCount(count() + 1)}>add</button> */}
+          <p>number:{count()}</p>
+          <button onClick={handleCount} class="btn btn-primary">
+            Increment
+          </button>
+          <button onClick={changeCount} class="btn btn-primary">
+            ChangeCount
+          </button>
           {cartItems.length === 0 ? (
             <p>Your cart is empty.</p>
           ) : (

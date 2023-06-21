@@ -6,6 +6,7 @@ import { Router } from "@solidjs/router";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { CartContextProvider } from "./context/Cart-context";
+import { GlobalContextProvider } from "./context/Test-context";
 
 const root = document.getElementById("root");
 
@@ -20,7 +21,9 @@ render(
     <>
       <Router>
         <CartContextProvider>
-          <App />
+          <GlobalContextProvider>
+            <App />
+          </GlobalContextProvider>
         </CartContextProvider>
       </Router>
     </>

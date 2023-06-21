@@ -39,10 +39,11 @@
 // export const useCartContext = () => useContext(CartContext)!;
 
 import {
+  Accessor,
+  Setter,
   createContext,
   createEffect,
   createSignal,
-  onMount,
   useContext,
 } from "solid-js";
 
@@ -62,6 +63,9 @@ type CartItem = {
 };
 
 type CartContextValue = {
+  count: Accessor<number>;
+  setCount: Setter<number>;
+  changeCount: () => void;
   cartItems: CartItem[];
   cart: CartItem[];
   addToCart: (product: Product) => void;
@@ -72,11 +76,13 @@ const CartContext = createContext<CartContextValue>();
 
 export function CartContextProvider(props: { children: any }) {
   const [cartItems, setCartItems] = createSignal<CartItem[]>([]);
+  const [count, setCount] = createSignal(1);
   // const [cartItems, setCartItems] = createSignal<CartItem[] | null>(null);
 
+  console.log(count(), "count");
   // Save cart to localStorage when it changes
   createEffect(() => {
-    const storedCartItems = localStorage.getItem("cartItems");
+    const storedCartItems: any = localStorage.getItem("cartItems");
     if (storedCartItems) {
       setCartItems(JSON.parse(storedCartItems));
     }
@@ -84,9 +90,20 @@ export function CartContextProvider(props: { children: any }) {
   const updateLocalStorage = () => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems()));
   };
+
   createEffect(() => {
+    const storeCount: any = localStorage.setItem("count", count());
+    if (storeCount) {
+      localStorage.setItem("count", storeCount);
+    }
+  });
+  createEffect(() => {
+    console.log(cartItems(), "cart");
     updateLocalStorage();
   });
+  const changeCount = () => {
+    setCount(3);
+  };
 
   const addToCart = (product: Product) => {
     setCartItems((prevItems) => {
@@ -111,7 +128,7 @@ export function CartContextProvider(props: { children: any }) {
       );
       return updatedItems;
     });
-    //  updateLocalStorage();
+    updateLocalStorage();
   };
 
   return (
@@ -121,6 +138,9 @@ export function CartContextProvider(props: { children: any }) {
         addToCart,
         removeFromCart,
         cart: cartItems(),
+        count,
+        setCount,
+        changeCount,
       }}
     >
       {props.children}

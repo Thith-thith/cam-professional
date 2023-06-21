@@ -14,7 +14,6 @@ type Product = {
 
 const CoreCard: Component<{ product: Product }> = (props) => {
   const { cartItems, addToCart } = useCartContext();
-  console.log(cartItems, "carat");
   const handleAddTocart = (product: Product) => {
     addToCart(product);
   };
