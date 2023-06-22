@@ -68,7 +68,7 @@ const CoreProducts = [
     image: "/products/product1.png",
     rating: 5,
     category: "Evolis",
-    price: 300,
+    price: 600,
     quantity: 1,
   },
 ];

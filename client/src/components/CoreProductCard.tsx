@@ -1,5 +1,5 @@
 import { Component, Show, createEffect, createSignal } from "solid-js";
-import { A } from "@solidjs/router";
+import { A, NavLink } from "@solidjs/router";
 import { useCartContext } from "../context/CartContext";
 import { createStore } from "solid-js/store";
 
@@ -19,7 +19,6 @@ type Cart = {
 
 const CoreCard: Component<{ product: Product }> = (props) => {
   const { cartItems, addToCart } = useCartContext();
-  const [cartLocal, setCartLocal] = createStore<Cart[]>([]);
   const handleAddTocart = (product: Product) => {
     addToCart(product);
   };
@@ -65,16 +64,24 @@ const CoreCard: Component<{ product: Product }> = (props) => {
             />
           </div>
         </div>
-        <div class="flex justify-center">
-          <button
-            onClick={() => handleAddTocart(props.product)}
-            class="bg-primary py-3 text-base-200 text-center w-full"
-          >
-            {/* {cartLocal().quantity} */}
-            {/* Add to cart */}
-            {isInCart() ? "View Cart" : "Add to Cart"}
-          </button>
-        </div>
+        {isInCart() ? (
+          <NavLink href="/cart">
+            <div class="flex justify-center">
+              <button class="bg-pink-500 py-3 text-base-200 text-center w-full">
+                View cart
+              </button>
+            </div>
+          </NavLink>
+        ) : (
+          <div class="flex justify-center">
+            <button
+              onClick={() => handleAddTocart(props.product)}
+              class="bg-primary py-3 text-base-200 text-center w-full"
+            >
+              Add to cart
+            </button>
+          </div>
+        )}
       </Show>
     </div>
     // </A>

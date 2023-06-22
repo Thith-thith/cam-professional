@@ -24,6 +24,7 @@ type CartItem = {
 type CartContextValue = {
   cartItems: CartItem[];
   addToCart: (product: Product) => void;
+  minusCart: (product: Product) => void;
   removeFromCart: (productId: string) => void;
 };
 
@@ -50,23 +51,11 @@ export function CartContextProvider(props: { children: any }) {
   };
 
   const addToCart = (product: Product) => {
-    // const existingItem = cartItems.find(
-    //   (item) => item.product.id === product.id
-    // );
-    // if (existingItem) {
-    //   existingItem.quantity + 1;
-    //   setCartItems([...cartItems]);
-    // } else {
-    //   setCartItems([...cartItems, { product, quantity: 1 }]);
-    // }
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(
         (item) => item.product.id.toString() === product.id.toString()
       );
       if (existingItem) {
-        // console.log(existingItem?.quantity + 1, "ec");
-        // existingItem?.quantity + 1;
-        // return prevItems;
         return prevItems.map((res) =>
           res.product.id === product.id
             ? { ...res, quantity: res.quantity + 1 }
@@ -79,22 +68,30 @@ export function CartContextProvider(props: { children: any }) {
     });
     updateLocalStorage();
   };
-  // const addToCart = (product: Product) => {
-  //   setCartItems((prevItems) => {
-  //     const existingItem = prevItems.find(
-  //       (item) => item.product.id === product.id
-  //     );
 
-  //     if (existingItem) {
-  //       return prevItems.map((item) =>
-  //         item.product.id === product.id
-  //           ? { ...item, quantity: item.quantity + 1 }
-  //           : item
-  //       );
-  //     }
-  //     return [...prevItems, { ...product, quantity: 1 }];
-  //   });
-  // };
+  const minusCart = (product: Product) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find(
+        (item) => item.product.id.toString() === product.id.toString()
+      );
+      if (existingItem) {
+        return prevItems.map((res) =>
+          res.product.id === product.id
+            ? { ...res, quantity: res.quantity - 1 }
+            : res
+        );
+      }
+      const updatedItems = prevItems.filter(
+        (item: any) => item.product.id !== product.id
+      );
+      return updatedItems;
+      // const newItem: CartItem = { product, quantity: 1 };
+      // const updatedItems = [...prevItems, newItem];
+      // return updatedItems;
+    });
+    updateLocalStorage();
+  };
+
   const removeFromCart = (productId: string) => {
     setCartItems((prevItems) => {
       const updatedItems = prevItems.filter(
@@ -111,6 +108,7 @@ export function CartContextProvider(props: { children: any }) {
         cartItems,
         addToCart,
         removeFromCart,
+        minusCart,
       }}
     >
       {props.children}

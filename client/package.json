@@ -24,6 +24,7 @@
     "aos": "^2.3.4",
     "babel-preset-solid": "^1.7.4",
     "kute.js": "^2.2.4",
+    "lottie-web": "^5.12.2",
     "solid-js": "^1.7.6"
   }
 }
