@@ -7,7 +7,7 @@ const Home: Component = () => {
   return (
     <div>
       <div class="bg-primary h-[473px]"></div>
-      <div class="px-44">
+      <div class="mx-44">
         <div class="mt-12">
           <LatesProduct />
         </div>

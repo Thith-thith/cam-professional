@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
+import ProductDetail from "./pages/ProductDetail";
 
 const App: Component = () => {
   return (
@@ -16,6 +17,7 @@ const App: Component = () => {
         <Route path="/about-us" component={About} />
         <Route path="/contact-us" component={Contact} />
         <Route path="/cart" component={Cart} />
+        <Route path="/core-product-detail/:id" component={ProductDetail} />
       </Routes>
       <Footer />
     </div>

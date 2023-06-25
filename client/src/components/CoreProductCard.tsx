@@ -28,8 +28,8 @@ const CoreCard: Component<{ product: Product }> = (props) => {
   };
 
   return (
-    // <A href="/about-us">
     <div class="card bg-base-200 h-full rounded-none">
+      {/* <A href={`/core-product-detail/${props.product.id}`}> */}
       <Show when={props} fallback={<p>Loading...</p>}>
         <figure class="px-10 pt-10">
           <img src={props.product?.image} alt="Shoes" class="h-36" />
@@ -83,8 +83,8 @@ const CoreCard: Component<{ product: Product }> = (props) => {
           </div>
         )}
       </Show>
+      {/* </A> */}
     </div>
-    // </A>
   );
 };
 
