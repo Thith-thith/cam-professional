@@ -7,7 +7,7 @@ const Footer: Component = () => {
       <div class="px-44 py-14">
         <div class="grid grid-cols-4 gap-6">
           <div>
-            <img class="w-36" src="/images/logo.png" />
+            <img class="w-36" src="/images/footer-logo.png" />
             <div class="flex space-x-2 mt-8 items-center">
               <img class="w-5 h-5" src="/images/map.png" />
               <p class="text-xs font-bold">

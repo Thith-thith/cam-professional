@@ -5,9 +5,10 @@ import LatestProduct from "../../data/Lates-product";
 const Index: Component = () => {
   return (
     <div>
-      <h1 class="text-center text-gray-500 font-extrabold md:text-2xl">
+      <h1 class="text-center text-gray-500 font-extrabold md:text-4xl">
         Latest Products
       </h1>
+      <p class="text-center text-sm font-bold">Our Latest Products</p>
       <div class="grid grid-cols-2 gap-4 mt-12">
         <For each={LatestProduct}>
           {(LatestProduct) => {

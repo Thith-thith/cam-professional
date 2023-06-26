@@ -1,15 +1,16 @@
-import { Component, For, createEffect } from "solid-js";
+import { Component, For } from "solid-js";
 import CoreProducts from "../../data/Core-Product";
 import CoreCard from "../../components/CoreProductCard";
 import { useCartContext } from "../../context/CartContext";
+import { NavLink } from "@solidjs/router";
 
 const CoreProduct: Component<{}> = (props) => {
   return (
     <div>
-      <h1 class="text-center text-gray-500 font-extrabold md:text-2xl">
+      <h1 class="text-center text-gray-500 font-extrabold md:text-4xl">
         CHECK THE CORE PRODUCT
       </h1>
-      <p class="text-center text-xs font-bold">LOOKING FOR OUR CORE PRODUCT</p>
+      <p class="text-center text-sm font-bold">LOOKING FOR OUR CORE PRODUCT</p>
       <div class="grid grid-cols-4 gap-4 mt-12">
         <For each={CoreProducts}>
           {(CoreProducts) => {
@@ -21,10 +22,12 @@ const CoreProduct: Component<{}> = (props) => {
           }}
         </For>
       </div>
-      <div class="float-right py-3 flex space-x-1 items-center">
-        <h1 class="text-gray-500 text-xs font-bold">Show more</h1>
-        <img class="w-auto h-3.5" src="/images/right-arrow.png" />
-      </div>
+      <NavLink href="/core-products">
+        <div class="float-right py-3 flex space-x-1 items-center">
+          <h1 class="text-gray-500 text-xs font-bold">Show more</h1>
+          <img class="w-auto h-3.5" src="/images/right-arrow.png" />
+        </div>
+      </NavLink>
     </div>
   );
 };
