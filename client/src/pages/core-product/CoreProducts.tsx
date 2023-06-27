@@ -23,7 +23,7 @@ const CoreProducts: Component<{}> = (props) => {
         </div> */}
         <div class="grid grid-cols-5 gap-4">
           <div class="mt-12 col-span-1">
-            <ul class="menu bg-base-200 rounded">
+            <ul class="menu bg-base-200 rounded sticky top-4">
               <li>
                 <h2 class="menu-title">Categories</h2>
                 <ul>

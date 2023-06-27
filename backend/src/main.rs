@@ -22,15 +22,20 @@ use async_graphql_actix_web::{GraphQLRequest, GraphQLResponse};
 use crate::graphql::{QueryRoot,MutationRoot};
 
 
+
 // ============>Graphql implement<<=============
-async fn index(pool:web::Data<Client>,schema: web::Data<ProductSchema>, req: GraphQLRequest) -> GraphQLResponse {
-    let context = AppContext {
-        db_pool:pool.get_ref().to_owned(),
-    };
-    let mut request = req.into_inner();
-    request = request.data(context);
-    schema.execute(request).await.into()
-    // schema.execute(req.into_inner()).await.into()
+// async fn index(pool:web::Data<Client>,schema: web::Data<ProductSchema>, req: GraphQLRequest) -> GraphQLResponse {
+//     let context = AppContext {
+//         db_pool:pool.database("rustecom").to_owned(),
+//         // db_pool:pool.get_ref().to_owned(),
+//     };
+//     let mut request = req.into_inner();
+//     request = request.data(context);
+//     schema.execute(request).await.into()
+//     // schema.execute(req.into_inner()).await.into()
+// }
+async fn index(schema: web::Data<ProductSchema>, req: GraphQLRequest) -> GraphQLResponse {
+    schema.execute(req.into_inner()).await.into()
 }
 
 async fn index_graphiql() -> Result<HttpResponse> {
@@ -41,10 +46,13 @@ async fn index_graphiql() -> Result<HttpResponse> {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-
- let schema = Schema::build(QueryRoot, MutationRoot, EmptySubscription).finish();
-    println!("GraphiQL IDE: http://localhost:8080");
-   let database = db_pool().await.unwrap();
+    let databases = db_pool().await.unwrap();
+    let client = Client::with_uri_str("mongodb+srv://Den:086280018@sala-koompi-test.cyyi1.mongodb.net/rustecom?retryWrites=true&w=majority").await.expect("err");
+    let db = client.database("rustecom");
+ let schema = Schema::build(QueryRoot, MutationRoot, EmptySubscription)
+    .data(AppContext{db_pool:{db.clone()}})
+    .finish();
+    println!("GraphiQL IDE: 127.0.0.1:8080/graphiql");
     // init logger middleware
     env::set_var("RUST_LOG", "actix_web=debug,actix_server=info");
     env_logger::init();
@@ -56,7 +64,7 @@ async fn main() -> std::io::Result<()> {
             .service(web::resource("/graphiql").guard(guard::Get()).to(index_graphiql))
     .service(register)
     .service(login)
-    .app_data(web::Data::new(database.clone()))
+    .app_data(web::Data::new(databases.clone()))
     .wrap(middleware::Logger::default())
    })
    .bind("127.0.0.1:8080")?

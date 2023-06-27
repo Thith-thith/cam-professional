@@ -7,12 +7,12 @@ use serde::{Deserialize,Serialize};
 pub struct CategoryModel {
     pub _id:ObjectId,
     pub name:String,
-    pub updated_at:Option<DateTime>,
-    pub created_at:Option<DateTime>
+    pub updated_at:DateTime,
+    pub created_at:DateTime
 }
 
 impl CategoryModel {
     pub fn _new() ->Self {
-        CategoryModel { _id: bson::oid::ObjectId::new(), name: String::from(""), updated_at: None, created_at: None }
+        CategoryModel { _id: bson::oid::ObjectId::new(), name: String::from(""), updated_at: DateTime::now(), created_at: DateTime::now() }
     }
 }

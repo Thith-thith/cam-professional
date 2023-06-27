@@ -1,9 +1,10 @@
 
-use mongodb::Client;
+use mongodb::{Database};
 
 #[derive(Debug)]
 pub struct AppContext {
-    pub db_pool: Client,
+    pub db_pool: Database,
+    // pub db_pool: Client,
 }
 
 #[derive(Debug, PartialEq)]

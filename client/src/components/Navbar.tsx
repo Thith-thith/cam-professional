@@ -6,8 +6,8 @@ const Navbar: Component = () => {
   const { cartItems } = useCartContext();
   return (
     <div>
-      <div>
-        <div class="px-44 navbar bg-base-200 sticky z-10 backdrop-blur-3xl opacity-90 ">
+      <div class="">
+        <div class="px-44 navbar sticky top-0 bg-base-200 z-10 backdrop-blur-3xl opacity-90 ">
           <div class="flex-1">
             <NavLink href="/">
               <img class="w-24" src="/images/logo.png" alt="Solid logo" />
