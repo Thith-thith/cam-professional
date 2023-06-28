@@ -8,7 +8,7 @@ const News: Component = () => {
       <h1 class="text-center text-gray-500 font-extrabold md:text-2xl">
         CHECK LATEST NEWS
       </h1>
-      <div class="grid grid-cols-4 gap-4 mt-12">
+      <div class="grid md:grid-cols-4 gap-4 mt-12">
         <For each={NewsData}>
           {(NewData) => {
             return (

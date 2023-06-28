@@ -12,7 +12,7 @@ import CoreProducts from "./pages/core-product/CoreProducts";
 const App: Component = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" component={Home} />
         <Route path="/about-us" component={About} />

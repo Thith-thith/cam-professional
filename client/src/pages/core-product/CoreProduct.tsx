@@ -11,7 +11,7 @@ const CoreProduct: Component<{}> = (props) => {
         CHECK THE CORE PRODUCT
       </h1>
       <p class="text-center text-sm font-bold">LOOKING FOR OUR CORE PRODUCT</p>
-      <div class="grid grid-cols-4 gap-4 mt-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-12">
         <For each={CoreProducts}>
           {(CoreProducts) => {
             return (

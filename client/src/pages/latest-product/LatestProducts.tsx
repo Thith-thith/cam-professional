@@ -9,7 +9,7 @@ const Index: Component = () => {
         Latest Products
       </h1>
       <p class="text-center text-sm font-bold">Our Latest Products</p>
-      <div class="grid grid-cols-2 gap-4 mt-12">
+      <div class="grid md:grid-cols-2 grid-cols-1 gap-4 mt-12">
         <For each={LatestProduct}>
           {(LatestProduct) => {
             return (

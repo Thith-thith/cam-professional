@@ -1,5 +1,6 @@
-import { Component } from "solid-js";
-
+import { Component, For } from "solid-js";
+import CoreProducts from "../data/Core-Product";
+import CoreCard from "../components/CoreProductCard";
 const ProductDetail: Component<{}> = (props) => {
   return (
     <div class="mx-44 mt-8">
@@ -20,6 +21,21 @@ const ProductDetail: Component<{}> = (props) => {
         <div class="grid grid-cols-6 gap-4">
           <div class="col-span-2">
             <img class="w-96" src="/products/product1.png" />
+            <div class="mt-12">
+              <h1 class="text-gray-600 font-bold">Describtions:</h1>
+              <p class="mt-5">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentiall y unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </p>
+            </div>
           </div>
           <div class="col-span-4">
             <h1 class="text-gray-600 text-2xl font-bold">CAM-TONER W1103A</h1>
@@ -87,6 +103,23 @@ const ProductDetail: Component<{}> = (props) => {
               </svg>
             </div>
           </div>
+        </div>
+      </div>
+      <div>
+        <h1 class="text-gray-600 font-bold text-xl text-center mt-32">
+          Related Products
+        </h1>
+
+        <div class="grid grid-cols-4 gap-4 mt-12">
+          <For each={CoreProducts.slice(0, 4)}>
+            {(CoreProducts) => {
+              return (
+                <div>
+                  <CoreCard product={CoreProducts} />
+                </div>
+              );
+            }}
+          </For>
         </div>
       </div>
     </div>

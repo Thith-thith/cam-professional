@@ -4,8 +4,8 @@ import { Component } from "solid-js";
 const Footer: Component = () => {
   return (
     <div class="bg-base-200 mt-12">
-      <div class="px-44 py-14">
-        <div class="grid grid-cols-4 gap-6">
+      <div class="md:mx-44 mx-3 py-14">
+        <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-6">
           <div>
             <img class="w-36" src="/images/footer-logo.png" />
             <div class="flex space-x-2 mt-8 items-center">
