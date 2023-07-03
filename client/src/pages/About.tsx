@@ -18,53 +18,13 @@ const About: Component = () => {
           </div>
         </div>
       </div>
-      <div class="px-44">
-        {/* <div class="relative w-full">
-          <div class="round1"></div>
-          <div class="round2"></div>
-          <div class="bg-[#ffffffaa] z-10 relative h-[50vh]  flex backdrop:blur-sm bg-opacity-60  mt-12 rounded-md p-12">
-            {" "}
-            <div class="grid grid-cols-2 gap-4 center">
-              <div>
-                {" "}
-                <h1 class="text-primary font-extrabold md:text-2xl m-auto">
-                  We Would Be Happy To Meet You And Cooperate Together
-                </h1>
-                <p class="mt-7 text-[#464c53]">
-                  Our Company is one of leading company in consumer printer
-                  field established in 2010, the main product is compatible
-                  toner cartridges for HP, Canon, Epson, Lexmark, Samsung, Dell,
-                  Brother, etc.
-                </p>
-              </div>
-              <div>
-                {" "}
-                <h1 class="text-primary font-extrabold md:text-2xl m-auto">
-                  We Are CAM Professional Technology
-                </h1>
-                <p class="mt-7 text-[#464c53]">
-                  We are trying our best service for you with the best quality
-                  and trust. Finding the best solutions, fixing and solve issues
-                  with all our ability.
-                </p>
-                <p class="mt-7 text-[#464c53]">
-                  We choose the best parts of consumables to make the whole
-                  toner cartridge.
-                </p>
-                <p class="mt-7 text-[#464c53]">
-                  We test each toner cartridge before delivery to make sure
-                  quality.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div> */}
-        <div class="mt-32 h-full">
+      <div class="md:mx-44 mx-3">
+        <div class="md:mt-32 h-full">
           <div class="about-bg-img bg-gradient-to-l from-cyan-500 to-blue-500 ">
             <div class="backdrop-blur-lg bg-[#ffffffaa] h-[60vh] bg-opacity-60 ">
-              <div class="py-24 px-12">
-                <div class="grid grid-cols-2 gap-4 center">
-                  <div>
+              <div class="md:py-24 md:px-12">
+                <div class="grid md:grid-cols-2 gap-4 center">
+                  <div data-aos="fade-right">
                     {" "}
                     <h1 class="text-primary font-extrabold md:text-2xl m-auto">
                       We Would Be Happy To Meet You And Cooperate Together
@@ -76,7 +36,7 @@ const About: Component = () => {
                       Dell, Brother, etc.
                     </p>
                   </div>
-                  <div>
+                  <div data-aos="fade-left">
                     {" "}
                     <h1 class="text-primary font-extrabold md:text-2xl m-auto">
                       We Are CAM Professional Technology
@@ -109,8 +69,12 @@ const About: Component = () => {
           </p>
         </div>
         <div class="mt-12">
-          <div class="grid grid-cols-3 gap-4">
-            <div class="bg-base-200 p-10 rounded">
+          <div class="grid md:grid-cols-3 gap-4">
+            <div
+              data-aos="fade-right"
+              data-aos-delay="100"
+              class="bg-base-200 p-10 rounded"
+            >
               <div class="flex justify-center">
                 <img class="w-12" src="/images/focus.png" />
               </div>
@@ -122,7 +86,17 @@ const About: Component = () => {
                 </p>
               </div>
             </div>
-            <div class="bg-base-200 p-10 rounded">
+            <div
+              data-aos="fade-right"
+              // data-aos-offset="200"
+              data-aos-delay="200"
+              // data-aos-duration="1000"
+              // data-aos-easing="ease-in-out"
+              // data-aos-mirror="true"
+              // data-aos-once="false"
+              // data-aos-anchor-placement="top-center"
+              class="bg-base-200 p-10 rounded"
+            >
               <div class="flex justify-center">
                 <img class="w-12" src="/images/mission.png" />
               </div>
@@ -134,7 +108,11 @@ const About: Component = () => {
                 </p>
               </div>
             </div>
-            <div class="bg-base-200 p-10 rounded">
+            <div
+              data-aos="fade-right"
+              data-aos-delay="200"
+              class="bg-base-200 p-10 rounded"
+            >
               <div class="flex justify-center">
                 <img class="w-12" src="/images/privacy-policy.png" />
               </div>
@@ -155,7 +133,7 @@ const About: Component = () => {
           <p class=" text-center  text-gray-600">
             We Couldn't Do It Without Them
           </p>
-          <div class="grid grid-cols-3 gap-4 mt-12">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12">
             <For each={Members}>
               {(members) => {
                 return (

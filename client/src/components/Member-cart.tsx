@@ -13,14 +13,14 @@ const MemberCard: Component<Props> = ({ props }) => {
   return (
     <div>
       <div class="bg-base-200 rounded h-full">
-        <div class="py-8 px-10">
+        <div class="md:py-8 py-2 px-10">
           <div class="flex justify-center">
             <img class="w-44" src={props.image} />
           </div>
-          <div class="text-center">
-            <h1 class="font-bold text-pink-500">{props.name}</h1>
-            <p class="text-sm text-gray-600">{props.position}</p>
-          </div>
+        </div>
+        <div class="text-center px-2 py-8">
+          <h1 class="font-bold text-pink-500">{props.name}</h1>
+          <p class="text-sm text-gray-600">{props.position}</p>
         </div>
       </div>
     </div>

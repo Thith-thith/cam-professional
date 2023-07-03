@@ -8,14 +8,14 @@ const Contact: Component<{}> = (props) => {
     console.log(event);
   };
   return (
-    <div class="px-44">
+    <div class="md:mx-44 mx-3">
       <div class="mt-12">
         <div class="text-center">
           <h1 class="text-6xl text-[#98A2AE] font-bold">Contact Us</h1>
           <p>We Would Be Happy To Assist You</p>
         </div>
         <div class="mt-12 flex justify-center">
-          <div class="bg-base-200 rounded-md w-[750px] p-12">
+          <div class="bg-base-200 rounded-md md:w-[750px] md:p-12 p-3">
             <form onSubmit={handleSubmit}>
               <div class="grid grid-cols-2 gap-4">
                 <div>
@@ -62,7 +62,7 @@ const Contact: Component<{}> = (props) => {
           </div>
         </div>
         <div class="mt-32">
-          <h1 class="text-center text-primary font-extrabold md:text-2xl w-96 m-auto">
+          <h1 class="text-center text-primary font-extrabold md:text-2xl md:w-auto w-96">
             We Would Be Happy To Meet You And Cooperate Together
           </h1>
           <p class="mt-3 text-center  text-gray-600">
@@ -70,7 +70,7 @@ const Contact: Component<{}> = (props) => {
           </p>
         </div>
         <div class="mt-12">
-          <div class="grid grid-cols-2 px-72 gap-4">
+          <div class="grid md:grid-cols-2 md:px-72 gap-4">
             <div class="bg-base-200 p-10">
               <div class="flex justify-center">
                 <img class="w-12" src="/images/24-7.png" />
@@ -99,7 +99,7 @@ const Contact: Component<{}> = (props) => {
             Our Connections Are Below
           </p>
           <div class="mt-12">
-            <div class="grid grid-cols-3 gap-4 px-44">
+            <div class="grid md:grid-cols-3 gap-4 md:px-44">
               <div class="p-8">
                 <div>
                   <div class="flex justify-center">

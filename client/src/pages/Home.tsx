@@ -3,6 +3,7 @@ import LatesProduct from "./latest-product/LatestProducts";
 import CoreProduct from "./core-product/CoreProduct";
 import News from "./news/news";
 import { NavLink } from "@solidjs/router";
+import { Splide } from "@splidejs/splide";
 
 const Home: Component = () => {
   return (
@@ -42,7 +43,6 @@ const Home: Component = () => {
             <a href="#item4" class="bg-primary h-2 w-2 rounded-full"></a>
           </div>
         </div> */}
-
         <div class="mt-32 md:p-12 rounded-md">
           <div class="grid md:grid-cols-2 md:gap-4">
             <div>

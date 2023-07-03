@@ -55,7 +55,7 @@ const Cart = () => {
 
   return (
     <div>
-      <div class="mx-44 mt-12">
+      <div class="md:mx-44 mx-3 mt-12">
         <h2 class="text-4xl text-[#98A2AE] font-bold text-center">
           Shopping Cart
         </h2>
@@ -74,13 +74,13 @@ const Cart = () => {
               </div>
             ) : (
               <div>
-                <div class="grid grid-cols-5 gap-20 mt-12 ">
-                  <div class="col-span-3">
+                <div class="grid md:grid-cols-5 md:gap-20 mt-12 ">
+                  <div class="md:col-span-3">
                     <h1 class="font-bold text-primary-focus">
                       Input your information
                     </h1>
                     <br />
-                    <div class="backdrop-blur-sm bg-white bg-opacity-80 p-8">
+                    <div class="backdrop-blur-sm bg-white bg-opacity-80 md:p-8 p-3">
                       <form onSubmit={handleSubmit}>
                         <div class="grid grid-cols-2 gap-4">
                           <div class="mb-6">
@@ -189,15 +189,17 @@ const Cart = () => {
                       </form>
                     </div>
                   </div>
-                  <div class="col-span-2">
-                    <h1 class="font-bold text-primary-focus">Order Summary</h1>
+                  <div class="md:col-span-2">
+                    <h1 class="font-bold text-primary-focus md:mt-0 mt-5">
+                      Order Summary
+                    </h1>
                     <br />
                     <div class="backdrop-blur-sm bg-white bg-opacity-80 p-8">
                       <For each={cartItems}>
                         {(cartItem) => {
                           return (
                             <Show when={cartItem} fallback={<p>Loading...</p>}>
-                              <div class="flex justify-between items-center">
+                              <div class="md:flex md:justify-between md:items-center">
                                 <div class="flex items-center space-x-3">
                                   <div>
                                     <div class="avatar">
@@ -222,7 +224,7 @@ const Cart = () => {
                                     </div>
                                   </div>
                                 </div>
-                                <div class="flex space-x-7 items-center">
+                                <div class="flex space-x-7 items-center md:mt-0 mt-2">
                                   <div class="flex space-x-3 items-center">
                                     {cartItem.quantity === 1 ? (
                                       <div class="bg-gray-100 p-1 rounded-full cursor-pointer">
@@ -314,6 +316,7 @@ const Cart = () => {
                                   </div>
                                 </div>
                               </div>
+                              <br />
                               <hr />
                             </Show>
                           );

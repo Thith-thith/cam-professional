@@ -7,14 +7,18 @@ const Navbar: Component = () => {
   return (
     <div>
       <div class="">
-        <div class="px-44 navbar sticky top-0 bg-base-200 z-10 backdrop-blur-3xl opacity-90 ">
+        <div class="md:px-44 navbar sticky top-0 bg-base-200 z-10 backdrop-blur-3xl opacity-90 ">
           <div class="flex-1">
             <NavLink href="/">
-              <img class="w-24" src="/images/logo.png" alt="Solid logo" />
+              <img
+                class="md:w-24 w-24"
+                src="/images/logo.png"
+                alt="Solid logo"
+              />
             </NavLink>
           </div>
-          <div class="flex-none gap-6">
-            <div class="flex items-center">
+          <div class="flex-none md:gap-6 gap-3">
+            <div class="md:flex items-center hidden">
               <input
                 type="text"
                 placeholder="Search"
@@ -22,16 +26,17 @@ const Navbar: Component = () => {
               />
               <img class="w-4 absolute ml-2" src="/images/search.png" />
             </div>
-            <div class="flex items-center">
+            <img class="w-4 md:hidden" src="/images/search.png" />
+            {/* <div class="flex items-center">
               <div>
                 <img class="w-5" src="/images/favorite.png" />
               </div>
-              <div class="ml-2">
+              <div class="md:ml-2 md:block hidden">
                 <NavLink href="/favorite">Favorite</NavLink>
               </div>
-            </div>
+            </div> */}
 
-            <NavLink href="/cart" class="ml-2">
+            <NavLink href="/cart" class="md:ml-2 md:mr-0 mr-3">
               <div class="flex items-center space-x-2">
                 <div class="indicator">
                   <img class="w-5" src="/images/cart.png" />
@@ -39,7 +44,7 @@ const Navbar: Component = () => {
                     {cartItems.length}
                   </span>
                 </div>
-                <p>Cart</p>
+                <p class="md:block hidden">Cart</p>
               </div>
             </NavLink>
 

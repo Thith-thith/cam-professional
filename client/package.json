@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@solidjs/router": "^0.8.2",
+    "@splidejs/splide": "^4.1.4",
     "aos": "^2.3.4",
     "babel-preset-solid": "^1.7.4",
     "kute.js": "^2.2.4",
