@@ -12,3 +12,13 @@ impl Message {
         &self.success
     }
 }
+
+pub struct Token {
+    pub token: String,
+}
+#[async_graphql::Object]
+impl Token {
+    async fn token(&self) -> &str {
+        &self.token
+    }
+}
