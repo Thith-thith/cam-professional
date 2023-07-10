@@ -1,0 +1,76 @@
+{
+  "CoreProducts": [
+    {
+      "id": "1",
+      "name": "FujiFilm Apeos C2560 Color",
+      "image": "/products/product1.png",
+      "rating": 5,
+      "category": "Evolis",
+      "price": 300,
+      "quantity": 1
+    },
+    {
+      "id": "2",
+      "name": "FujiFilm Apeos C2560 Color",
+      "image": "/products/product2.png",
+      "rating": 5,
+      "category": "Evolis",
+      "price": 300,
+      "quantity": 1
+    },
+    {
+      "id": "3",
+      "name": "FujiFilm Apeos C2560 Color",
+      "image": "/products/product2.png",
+      "rating": 5,
+      "category": "Evolis",
+      "price": 300,
+      "quantity": 1
+    },
+    {
+      "id": "4",
+      "name": "CAM-TONER Ink 45",
+      "image": "/products/product1.png",
+      "rating": 5,
+      "category": "Evolis",
+      "price": 300,
+      "quantity": 1
+    },
+    {
+      "id": "5",
+      "name": "CAM-TONER Ink 45",
+      "image": "/products/product1.png",
+      "rating": 5,
+      "category": "Evolis",
+      "price": 300,
+      "quantity": 1
+    },
+    {
+      "id": "6",
+      "name": "CAM-TONER Ink 45",
+      "image": "/products/product2.png",
+      "rating": 5,
+      "category": "Evolis",
+      "price": 300,
+      "quantity": 1
+    },
+    {
+      "id": "7",
+      "name": "CAM-TONER Ink 45",
+      "image": "/products/product2.png",
+      "rating": 5,
+      "category": "Evolis",
+      "price": 300,
+      "quantity": 1
+    },
+    {
+      "id": "8",
+      "name": "CAM-TONER Ink 45",
+      "image": "/products/product1.png",
+      "rating": 5,
+      "category": "Evolis",
+      "price": 600,
+      "quantity": 1
+    }
+  ]
+}

@@ -18,7 +18,7 @@ const App: Component = () => {
         <Route path="/about-us" component={About} />
         <Route path="/contact-us" component={Contact} />
         <Route path="/cart" component={Cart} />
-        <Route path="/core-product-detail/:id" component={ProductDetail} />
+        <Route path="/core-product-detail/:id?" component={ProductDetail} />
         <Route path="/core-products" component={CoreProducts} />
       </Routes>
       <Footer />

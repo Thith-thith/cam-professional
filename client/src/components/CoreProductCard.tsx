@@ -23,7 +23,9 @@ const CoreCard: Component<{ product: Product }> = (props) => {
     addToCart(product);
   };
   const isInCart = () => {
-    const data = cartItems.some((item) => item.product.id === props.product.id);
+    const data = cartItems.some(
+      (item) => item?.product?.id === props?.product?.id
+    );
     return data;
   };
 

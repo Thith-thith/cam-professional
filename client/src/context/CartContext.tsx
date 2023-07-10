@@ -53,11 +53,11 @@ export function CartContextProvider(props: { children: any }) {
   const addToCart = (product: Product) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(
-        (item) => item.product.id.toString() === product.id.toString()
+        (item) => item.product?.id === product?.id
       );
       if (existingItem) {
         return prevItems.map((res) =>
-          res.product.id === product.id
+          res.product?.id === product?.id
             ? { ...res, quantity: res.quantity + 1 }
             : res
         );
@@ -72,7 +72,7 @@ export function CartContextProvider(props: { children: any }) {
   const minusCart = (product: Product) => {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(
-        (item) => item.product.id.toString() === product.id.toString()
+        (item) => item.product?.id === product?.id
       );
       if (existingItem) {
         return prevItems.map((res) =>

@@ -1,15 +1,15 @@
 use crate::context::context::AppContext;
 use crate::models::category::{CategoryModel, CreateCategory};
 use crate::models::user::{Claims, User};
+use crate::utils::auth::TokenPayload;
 use crate::utils::responder::{Message, Token};
-use actix_web::HttpResponse;
-use async_graphql::*;
+
+use async_graphql::{Context, Error, FieldError, FieldResult, Object};
 use bcrypt::{hash, verify};
 use bson::{doc, Bson, DateTime};
 use chrono::{Duration, Utc};
 use jsonwebtoken::{encode, EncodingKey, Header};
 use mongodb::Collection;
-use serde_json::json;
 
 pub struct MutationRoot;
 
@@ -92,9 +92,6 @@ impl MutationRoot {
                     println!("{}", &token);
                     // return Ok(token.to_string());
                     return Ok(Token { token });
-                    // return Ok(Token {
-                    //     tokens: "hello".to_string(),
-                    // });
                 }
             }
         }
@@ -109,26 +106,33 @@ impl MutationRoot {
         ctx: &Context<'_>,
         input: CreateCategory,
     ) -> FieldResult<Message> {
+        let decoded = &ctx.data_opt::<TokenPayload>().to_owned();
+        println!("hello this is decoded{:#?}", decoded);
         let db = &ctx.data_unchecked::<AppContext>().db_pool.clone();
         let col = db.database("rustecom").collection("categories");
-        let exist_name = col
-            .find_one(doc! {"name":input.name.clone()}, None)
-            .await
-            .unwrap();
-        match exist_name {
-            Some(_) => Err(FieldError::from("this name is already exist")),
-            None => {
-                let new_category = doc! {
-                    "name":input.name,
-                    "created_at":DateTime::now(),
-                    "updated_at":DateTime::now(),
-                };
-                let result = col.insert_one(new_category, None).await.unwrap();
-                Ok(Message {
-                    success: true,
-                    message: format!("test created with id: {:?}", result),
-                })
+
+        if let Some(user) = decoded {
+            let exist_name = col
+                .find_one(doc! {"name":input.name.clone()}, None)
+                .await
+                .unwrap();
+            match exist_name {
+                Some(_) => Err(FieldError::from("this name is already exist")),
+                None => {
+                    let new_category = doc! {
+                        "name":input.name,
+                        "created_at":DateTime::now(),
+                        "updated_at":DateTime::now(),
+                    };
+                    let result = col.insert_one(new_category, None).await.unwrap();
+                    Ok(Message {
+                        success: true,
+                        message: format!("test created with id: {:?}", result),
+                    })
+                }
             }
+        } else {
+            Err(Error::new("Unauthorized, Logged in required!"))
         }
     }
     //=================>update category by id<============

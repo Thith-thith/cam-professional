@@ -209,7 +209,7 @@ const Cart = () => {
                                     </div>
                                   </div>
                                   <div>
-                                    <h1>{cartItem.product.name}</h1>
+                                    <h1>{cartItem.product?.name}</h1>
                                     <div class="flex">
                                       <p>
                                         {cartItem.product.price} x

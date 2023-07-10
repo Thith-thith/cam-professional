@@ -8,7 +8,82 @@ import { Splide } from "@splidejs/splide";
 const Home: Component = () => {
   return (
     <div>
-      <div class="bg-primary h-[473px]"></div>
+      <div class="bg-home-main">
+        {/* <img src="/images/angkor.png" class="angkor-banner" /> */}
+        <div class="absolute w-[100%] top-30">
+          <h1 class="text-center font-3xl text-white text-5xl mt-24">
+            CAM PROFESSIONAL TECHNOLOGY
+          </h1>
+          <h2 class="text-center font-3xl text-white text-3xl mt-3">
+            The Best Toner Cartridge Supplier In Cambodia
+          </h2>
+          <p class="mx-96 text-center mt-20 text-white text-xl">
+            One of the leading companies in the consumer printer field
+            established in 2010 Its main product is compatible toner cartridges
+            for HP, Canon, Epson, Lexmark, Samsung, Dell, Brother, etc.
+          </p>
+          <div class="flex justify-center mt-16 cursor-pointer z-50">
+            <NavLink
+              href="/about-us"
+              class="border px-8 py-1 rounded text-white group"
+              // class="btn border-none text-white hover:bg-pink-500 bg-pink-600 group mt-2 w-64 cursor-pointer "
+            >
+              Explore
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="hidden h-6 w-6 transition-transform duration-300 group-hover:translate-x-1 md:inline-block ml-2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                />
+              </svg>
+            </NavLink>
+          </div>
+        </div>
+      </div>
+
+      {/* <div class="absolute w-[100%] top-30">
+        <h1 class="text-center font-3xl text-white text-5xl mt-20">
+          CAM PROFESSIONAL TECHNOLOGY
+        </h1>
+        <h2 class="text-center font-3xl text-white text-3xl mt-3">
+          The Best Toner Cartridge Supplier In Cambodia
+        </h2>
+        <p class="mx-96 text-center mt-20 text-white text-xl">
+          One of the leading companies in the consumer printer field established
+          in 2010 Its main product is compatible toner cartridges for HP, Canon,
+          Epson, Lexmark, Samsung, Dell, Brother, etc.
+        </p>
+        <div class="flex justify-center mt-24 cursor-pointer z-50">
+          <NavLink
+            href="/about-us"
+            class=" btn-active group mt-2 w-64 cursor-pointer "
+          >
+            See More
+          </NavLink>
+        </div>
+      </div>
+
+      <div class="area">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div> */}
       <div class="md:mx-44 mx-3">
         <div class="mt-20">
           <LatesProduct />
