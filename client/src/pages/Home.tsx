@@ -47,43 +47,6 @@ const Home: Component = () => {
           </div>
         </div>
       </div>
-
-      {/* <div class="absolute w-[100%] top-30">
-        <h1 class="text-center font-3xl text-white text-5xl mt-20">
-          CAM PROFESSIONAL TECHNOLOGY
-        </h1>
-        <h2 class="text-center font-3xl text-white text-3xl mt-3">
-          The Best Toner Cartridge Supplier In Cambodia
-        </h2>
-        <p class="mx-96 text-center mt-20 text-white text-xl">
-          One of the leading companies in the consumer printer field established
-          in 2010 Its main product is compatible toner cartridges for HP, Canon,
-          Epson, Lexmark, Samsung, Dell, Brother, etc.
-        </p>
-        <div class="flex justify-center mt-24 cursor-pointer z-50">
-          <NavLink
-            href="/about-us"
-            class=" btn-active group mt-2 w-64 cursor-pointer "
-          >
-            See More
-          </NavLink>
-        </div>
-      </div>
-
-      <div class="area">
-        <ul class="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div> */}
       <div class="md:mx-44 mx-3">
         <div class="mt-20">
           <LatesProduct />

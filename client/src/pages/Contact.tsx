@@ -71,7 +71,7 @@ const Contact: Component<{}> = (props) => {
         </div>
         <div class="mt-12">
           <div class="grid md:grid-cols-2 md:px-72 gap-4">
-            <div class="bg-base-200 p-10">
+            <div data-aos="fade-right" class="bg-base-200 p-10">
               <div class="flex justify-center">
                 <img class="w-12" src="/images/24-7.png" />
               </div>
@@ -80,7 +80,7 @@ const Contact: Component<{}> = (props) => {
                 <p class="text-blue-900">(Public Holiday We Don't Work)</p>
               </div>
             </div>
-            <div class="bg-base-200 p-10">
+            <div data-aos="fade-left" class="bg-base-200 p-10">
               <div class="flex justify-center">
                 <img class="w-12" src="/images/extra-time.png" />
               </div>
@@ -100,7 +100,7 @@ const Contact: Component<{}> = (props) => {
           </p>
           <div class="mt-12">
             <div class="grid md:grid-cols-3 gap-4 md:px-44">
-              <div class="p-8">
+              <div data-aos="fade-up" data-aos-delay="300" class="p-8">
                 <div>
                   <div class="flex justify-center">
                     <img class="w-14" src="/images/map.png" />
@@ -110,7 +110,7 @@ const Contact: Component<{}> = (props) => {
                   </p>
                 </div>
               </div>
-              <div class="p-8">
+              <div data-aos="fade-up" data-aos-delay="400" class="p-8">
                 <div>
                   <div class="flex justify-center">
                     <img class="w-14" src="/images/phone.png" />
@@ -118,7 +118,7 @@ const Contact: Component<{}> = (props) => {
                   <p class="text-center mt-5 text-sm">023 884 789</p>
                 </div>
               </div>
-              <div class="p-8">
+              <div data-aos="fade-up" data-aos-delay="500" class="p-8">
                 <div>
                   <div class="flex justify-center">
                     <img class="w-14" src="/images/gmail.png" />
