@@ -11,13 +11,13 @@ const Home: Component = () => {
       <div class="bg-home-main">
         {/* <img src="/images/angkor.png" class="angkor-banner" /> */}
         <div class="absolute w-[100%] top-30">
-          <h1 class="text-center font-3xl text-white text-5xl mt-24">
+          <h1 class="text-center font-3xl text-white md:text-5xl font-bold text-3xl mt-12 md:mt-24">
             CAM PROFESSIONAL TECHNOLOGY
           </h1>
-          <h2 class="text-center font-3xl text-white text-3xl mt-3">
+          <h2 class="text-center font-3xl text-white md:text-3xl text-2xl mt-3">
             The Best Toner Cartridge Supplier In Cambodia
           </h2>
-          <p class="mx-96 text-center mt-20 text-white text-xl">
+          <p class="md:mx-96 mx-10 mt-12  text-center md:mt-20 text-white md:text-xl text-md">
             One of the leading companies in the consumer printer field
             established in 2010 Its main product is compatible toner cartridges
             for HP, Canon, Epson, Lexmark, Samsung, Dell, Brother, etc.
@@ -54,33 +54,6 @@ const Home: Component = () => {
         <div class="mt-32">
           <CoreProduct />
         </div>
-        {/* <div class="mt-32 px-60">
-          <h1 class="text-center text-gray-500 font-extrabold md:text-4xl">
-            Our Clients Believe In Us
-          </h1>
-          <p class="text-center text-sm font-bold">Service with a smile</p>
-          <div class="carousel space-x-3 mt-12">
-            <div id="item1" class="carousel-item ">
-              <img src="/images/HGB.jpg" class="w-[218px] h-[218px]" />
-            </div>
-
-            <div id="item3" class="carousel-item ">
-              <img src="/images/wing.png" class="w-[218px] h-[218px]" />
-            </div>
-            <div id="item4" class="carousel-item ">
-              <img src="/images/amret.png" class="w-[218px] h-[218px]" />
-            </div>
-            <div id="item2" class="carousel-item ">
-              <img src="/images/maybank.jpg" class="w-[218px] h-[218px]" />
-            </div>
-          </div>
-          <div class="flex justify-center  py-2 gap-2">
-            <a href="#item1" class="bg-primary h-2 w-2 rounded-full"></a>
-            <a href="#item2" class="bg-primary h-2 w-2 rounded-full"></a>
-            <a href="#item3" class="bg-primary h-2 w-2 rounded-full"></a>
-            <a href="#item4" class="bg-primary h-2 w-2 rounded-full"></a>
-          </div>
-        </div> */}
         <div class="mt-32 md:p-12 rounded-md">
           <div class="grid md:grid-cols-2 md:gap-4">
             <div>

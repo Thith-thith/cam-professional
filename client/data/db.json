@@ -71,6 +71,24 @@
       "category": "Evolis",
       "price": 600,
       "quantity": 1
+    },
+    {
+      "id": "9",
+      "name": "CAM-TONER Ink 45",
+      "image": "/products/product1.png",
+      "rating": 5,
+      "category": "Evolis",
+      "price": 600,
+      "quantity": 1
+    },
+    {
+      "id": "10",
+      "name": "CAM-TONER Ink 45",
+      "image": "/products/product1.png",
+      "rating": 5,
+      "category": "Evolis",
+      "price": 600,
+      "quantity": 1
     }
   ]
 }

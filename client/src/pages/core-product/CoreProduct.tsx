@@ -19,7 +19,7 @@ const CoreProduct: Component<{}> = (props) => {
       <p class="text-center text-sm font-bold">LOOKING FOR OUR CORE PRODUCT</p>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-12">
         <Show when={CoreProducts()} fallback={<p>Loading...</p>}>
-          <For each={CoreProducts()}>
+          <For each={CoreProducts().slice(0, 8)}>
             {(CoreProducts) => {
               return (
                 <div>

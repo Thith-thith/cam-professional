@@ -42,7 +42,7 @@ const ProductDetail: Component<{ product: Product }> = (props) => {
   });
 
   return (
-    <div class="mx-44 mt-8">
+    <div class="md:mx-44 mx-3 mt-8">
       <div class="text-sm breadcrumbs">
         <ul>
           <li>
@@ -58,10 +58,10 @@ const ProductDetail: Component<{ product: Product }> = (props) => {
       <Show when={item()} fallback={<p>Loading....</p>}>
         {/* //product details */}
         <div class="mt-12">
-          <div class="grid grid-cols-6 gap-4">
+          <div class="grid md:grid-cols-6 grid-cols-1 gap-4">
             <div class="col-span-2">
               <img class="w-96" src={item()?.image} />
-              <div class="mt-12">
+              {/* <div class="mt-12">
                 <h1 class="text-gray-600 font-bold">Describtions:</h1>
                 <p class="mt-5">
                   Lorem Ipsum is simply dummy text of the printing and
@@ -75,7 +75,7 @@ const ProductDetail: Component<{ product: Product }> = (props) => {
                   passages, and more recently with desktop publishing software
                   like Aldus PageMaker including versions of Lorem Ipsum.
                 </p>
-              </div>
+              </div> */}
             </div>
             <div class="col-span-4">
               <h1 class="text-gray-600 text-2xl font-bold">{item()?.name}</h1>
@@ -114,7 +114,7 @@ const ProductDetail: Component<{ product: Product }> = (props) => {
                   Price: ${item()?.price}
                 </p>
               </div>
-              <div class="w-[500px] mt-5">
+              <div class="md:w-[500px] mt-5">
                 <p class="text-lg text-gray-60">
                   🔍 BADGY 200 Black Ribbon Monochrome Add your review 91Ribbon
                   $19.00 Black monochrome ribbon 500 black mono prints per roll
@@ -144,31 +144,31 @@ const ProductDetail: Component<{ product: Product }> = (props) => {
                     </button>
                   </div>
                 )}
-                {/* <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-12 h-12 cursor-pointer"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-                  />
-                </svg> */}
               </div>
             </div>
           </div>
         </div>
       </Show>
+      <div class="mt-12">
+        <h1 class="text-gray-600 font-bold">Describtions:</h1>
+        <p class="mt-5">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentiall y unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+      </div>
       <div>
         <h1 class="text-gray-600 font-bold text-xl text-center mt-32">
           Related Products
         </h1>
 
-        <div class="grid grid-cols-4 gap-4 mt-12">
+        <div class="grid md:grid-cols-4 grid-cols-1 gap-4 mt-12">
           <For each={CoreProducts.slice(0, 4)}>
             {(CoreProducts) => {
               return (
