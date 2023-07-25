@@ -2,93 +2,75 @@
   "CoreProducts": [
     {
       "id": "1",
-      "name": "FujiFilm Apeos C2560 Color",
+      "name": "Primacy 2 Color Ribbon 300 Prints/Roll",
       "image": "/products/product1.png",
       "rating": 5,
-      "category": "Evolis",
-      "price": 300,
-      "quantity": 1
+      "brand": "RIBBON",
+      "price": 98,
+      "quatity": 1
     },
     {
       "id": "2",
-      "name": "FujiFilm Apeos C2560 Color",
-      "image": "/products/product2.png",
+      "name": "Evolis Primacy 2 Simplex Expert Printer",
+      "image": "/products/product-2.avif",
       "rating": 5,
-      "category": "Evolis",
-      "price": 300,
-      "quantity": 1
+      "brand": "EVOLIS",
+      "price": 1750,
+      "quatity": 1
     },
     {
       "id": "3",
-      "name": "FujiFilm Apeos C2560 Color",
-      "image": "/products/product2.png",
+      "name": "Evolis Primacy 2 Simplex Expert Printer",
+      "image": "/products/product-3.avif",
       "rating": 5,
-      "category": "Evolis",
+      "brand": "EVOLIS",
       "price": 300,
-      "quantity": 1
+      "quatity": 1
     },
     {
       "id": "4",
-      "name": "CAM-TONER Ink 45",
-      "image": "/products/product1.png",
+      "name": "FujiFilm Apeos 2560 Mono",
+      "image": "/products/product-4.avif",
       "rating": 5,
-      "category": "Evolis",
-      "price": 300,
-      "quantity": 1
+      "brand": "FUJIFILM",
+      "price": 3300,
+      "quatity": 1
     },
     {
       "id": "5",
-      "name": "CAM-TONER Ink 45",
+      "name": "Primacy 2 Color Ribbon 300 Prints/Roll",
       "image": "/products/product1.png",
       "rating": 5,
-      "category": "Evolis",
-      "price": 300,
-      "quantity": 1
+      "brand": "RIBBON",
+      "price": 98,
+      "quatity": 1
     },
     {
       "id": "6",
-      "name": "CAM-TONER Ink 45",
-      "image": "/products/product2.png",
+      "name": "Evolis Primacy 2 Simplex Expert Printer",
+      "image": "/products/product-2.avif",
       "rating": 5,
-      "category": "Evolis",
-      "price": 300,
-      "quantity": 1
+      "brand": "EVOLIS",
+      "price": 1750,
+      "quatity": 1
     },
     {
       "id": "7",
-      "name": "CAM-TONER Ink 45",
-      "image": "/products/product2.png",
+      "name": "Evolis Primacy 2 Simplex Expert Printer",
+      "image": "/products/product-3.avif",
       "rating": 5,
-      "category": "Evolis",
+      "brand": "EVOLIS",
       "price": 300,
-      "quantity": 1
+      "quatity": 1
     },
     {
       "id": "8",
-      "name": "CAM-TONER Ink 45",
-      "image": "/products/product1.png",
+      "name": "FujiFilm Apeos 2560 Mono",
+      "image": "/products/product-4.avif",
       "rating": 5,
-      "category": "Evolis",
-      "price": 600,
-      "quantity": 1
-    },
-    {
-      "id": "9",
-      "name": "CAM-TONER Ink 45",
-      "image": "/products/product1.png",
-      "rating": 5,
-      "category": "Evolis",
-      "price": 600,
-      "quantity": 1
-    },
-    {
-      "id": "10",
-      "name": "CAM-TONER Ink 45",
-      "image": "/products/product1.png",
-      "rating": 5,
-      "category": "Evolis",
-      "price": 600,
-      "quantity": 1
+      "brand": "FUJIFILM",
+      "price": 3300,
+      "quatity": 1
     }
   ]
 }

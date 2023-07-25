@@ -12,7 +12,10 @@ type Product = {
   id: string;
   name: string;
   image: string;
+  rating: number;
+  brand: string;
   price: number;
+  category: string;
   quantity: number;
 };
 

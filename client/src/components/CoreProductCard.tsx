@@ -8,8 +8,9 @@ type Product = {
   name: string;
   image: string;
   rating: number;
-  category: string;
+  brand: string;
   price: number;
+  category: string;
   quantity: number;
 };
 type Cart = {
@@ -19,6 +20,7 @@ type Cart = {
 
 const CoreCard: Component<{ product: Product }> = (props) => {
   const { cartItems, addToCart } = useCartContext();
+
   const handleAddTocart = (product: Product) => {
     addToCart(product);
   };

@@ -1,5 +1,5 @@
 import { Component, For } from "solid-js";
-import LatestCart from "../../components/Latest-cart";
+import LatestCart from "../Cards";
 import LatestProduct from "../../data/Lates-product";
 
 const Index: Component = () => {

@@ -26,7 +26,7 @@ const fetchProduct = async (id: string) => {
   const res = await fetch(`http://localhost:3000/CoreProducts/` + id);
   return res.json();
 };
-const ProductDetail: Component<{ product: Product }> = (props) => {
+const ProductDetail: Component<{}> = (props) => {
   const { addToCart, cartItems } = useCartContext();
   const params = useParams<{ id: string }>();
   const [item] = createResource(params.id, fetchProduct);

@@ -24,6 +24,7 @@
     "@splidejs/splide": "^4.1.4",
     "aos": "^2.3.4",
     "babel-preset-solid": "^1.7.4",
+    "flowbite": "^1.7.0",
     "json-server": "^0.17.3",
     "kute.js": "^2.2.4",
     "lottie-web": "^5.12.2",
