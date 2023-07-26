@@ -79,6 +79,26 @@ const CoreProducts = [
     quantity: 1,
     category: "",
   },
+  {
+    id: "9",
+    name: "FujiFilm Apeos 2560 Mono",
+    image: "/products/product-4.avif",
+    rating: 5,
+    brand: "FUJIFILM",
+    price: 3300,
+    quantity: 1,
+    category: "",
+  },
+  {
+    id: "10",
+    name: "FujiFilm Apeos 2560 Mono",
+    image: "/products/product-4.avif",
+    rating: 5,
+    brand: "FUJIFILM",
+    price: 3300,
+    quantity: 1,
+    category: "",
+  },
 ];
 
 export default CoreProducts;

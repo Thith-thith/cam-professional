@@ -42,7 +42,7 @@ const Cards: Component<{ product: Product }> = (props) => {
                 onClick={(e) => {
                   e.stopPropagation();
                 }}
-                class="z-50 transition ease-in duration-300 bg-gray-50  hover:text-danger shadow hover:shadow-md text-red-300 rounded-full w-8 h-8 text-center p-1"
+                class="z-40 transition ease-in duration-300 bg-gray-50  hover:text-danger shadow hover:shadow-md text-red-300 rounded-full w-8 h-8 text-center p-1"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

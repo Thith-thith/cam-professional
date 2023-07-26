@@ -133,7 +133,10 @@ const Navbar: Component = () => {
               </svg>
               <span class="font-medium">Favorites</span>
             </div>
-            <div class="flex cursor-pointer items-center gap-x-2 rounded-md py-2 px-4 hover:bg-gray-100">
+            <a
+              href="/cart"
+              class="flex cursor-pointer items-center gap-x-2 rounded-md py-2 px-4 hover:bg-gray-100"
+            >
               <div class="relative">
                 <svg
                   class="w-5 h-5 text-gray-600 dark:text-white"
@@ -149,7 +152,7 @@ const Navbar: Component = () => {
                 </span>
               </div>
               <span class="font-medium">Cart</span>
-            </div>
+            </a>
           </div>
           <div
             class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"

@@ -16,6 +16,7 @@ const latesProducts = [
     rating: 5,
     brand: "EVOLIS",
     price: 1750,
+    category: "sdf",
     quantity: 1,
   },
   {
@@ -52,6 +53,7 @@ const latesProducts = [
     rating: 5,
     brand: "EVOLIS",
     price: 1750,
+    category: "sdf",
     quantity: 1,
   },
   {

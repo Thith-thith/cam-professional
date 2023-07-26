@@ -176,7 +176,9 @@ export const LatestProducts: Component<{}> = () => {
           Out new products
         </p>
         <div class="float-right py-3 flex space-x-1 items-center">
-          <h1 class="text-gray-500 text-xs font-bold">Show More</h1>
+          <a href="/products" class="text-gray-500 text-xs font-bold">
+            Show More
+          </a>
           <img class="w-auto h-3.5" src="/images/right-arrow.png" />
         </div>
         <div class="grid md:grid-cols-4 grid-cols-1 gap-4 mt-12">
