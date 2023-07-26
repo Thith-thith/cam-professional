@@ -4,11 +4,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;600&display=swap");
 
+html {
+  scroll-behavior: smooth !important;
+}
+
 body {
   font-family: "Inter", sans-serif;
   font-weight: 300;
   overflow-x: hidden !important;
-  scroll-behavior: smooth;
 }
 
 .letterspacing {

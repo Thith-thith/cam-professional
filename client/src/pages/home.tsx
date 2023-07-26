@@ -1,8 +1,8 @@
 import { Component, For, Show, createResource } from "solid-js";
 import latestProduct from "../../data/Lates-product";
-import Cards from "../components/Cards";
+import Cards from "../components/cards/Cards";
 import NewsData from "../data/News";
-import NewsCard from "../components/NewsCard";
+import NewsCard from "../components/cards/NewsCard";
 
 const Home: Component = () => {
   return (
@@ -71,7 +71,7 @@ export const Banner: Component = () => {
 
           <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
             <a
-              href="#"
+              href="/products"
               class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-2xl bg-primary hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
             >
               Get Started
@@ -167,7 +167,7 @@ export const Banner: Component = () => {
 
 export const LatestProducts: Component<{}> = () => {
   return (
-    <section>
+    <section id="products">
       <div class="mx-auto max-w-screen-xl">
         <h1 class="text-center text-gray-300 font-extrabold md:text-5xl uppercase">
           Latest Products
@@ -211,7 +211,7 @@ export const MainProducts: Component<{}> = () => {
         <p class="text-center text-xl font-semibold uppercase">
           LOOKING FOR OUR CORE PRODUCT
         </p>
-        <a href="/core-products">
+        <a href="/products">
           <div class="float-right py-3 flex space-x-1 items-center">
             <h1 class="text-gray-500 text-xs font-bold">Show More</h1>
             <img class="w-auto h-3.5" src="/images/right-arrow.png" />

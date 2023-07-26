@@ -1,5 +1,5 @@
 import { Component, Show } from "solid-js";
-import { useCartContext } from "../context/CartContext";
+import { useCartContext } from "../../context/CartContext";
 import { A, useNavigate } from "@solidjs/router";
 
 export type Product = {
@@ -33,7 +33,7 @@ const Cards: Component<{ product: Product }> = (props) => {
       <Show when={props} fallback={<p>Loading...</p>}>
         <div
           onClick={() => {
-            navigate(`/core-product-detail/${props?.product?.id}`);
+            navigate(`/products/${props?.product?.id}`);
           }}
         >
           <div class="group relative max-w-sm h-[25.5rem] bg-white border border-gray-200 rounded-3xl shadow dark:bg-gray-800 dark:border-gray-700 ">

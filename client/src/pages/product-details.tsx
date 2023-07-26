@@ -1,23 +1,17 @@
-import {
-  Component,
-  For,
-  Show,
-  createEffect,
-  createResource,
-  createSignal,
-  onCleanup,
-} from "solid-js";
+import { Component, For, Show, createEffect, createResource } from "solid-js";
 import CoreProducts from "../data/Core-Product";
-import CoreCard from "../components/CoreProductCard";
 import { useParams } from "@solidjs/router";
 import { useCartContext } from "../context/CartContext";
 import { NavLink } from "@solidjs/router";
+import Cards from "../components/cards/Cards";
+
 type Product = {
   id: string;
   name: string;
   image: string;
   rating: number;
   category: string;
+  brand: string;
   price: number;
   quantity: number;
 };
@@ -173,7 +167,7 @@ const ProductDetail: Component<{}> = (props) => {
             {(CoreProducts) => {
               return (
                 <div>
-                  <CoreCard product={CoreProducts} />
+                  <Cards product={CoreProducts} />
                 </div>
               );
             }}

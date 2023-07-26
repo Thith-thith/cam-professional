@@ -6,7 +6,8 @@ const CoreProducts = [
     rating: 5,
     brand: "RIBBON",
     price: 98,
-    quatity: 1,
+    quantity: 1,
+    category: "",
   },
   {
     id: "2",
@@ -15,7 +16,8 @@ const CoreProducts = [
     rating: 5,
     brand: "EVOLIS",
     price: 1750,
-    quatity: 1,
+    quantity: 1,
+    category: "",
   },
   {
     id: "3",
@@ -24,7 +26,8 @@ const CoreProducts = [
     rating: 5,
     brand: "EVOLIS",
     price: 300,
-    quatity: 1,
+    quantity: 1,
+    category: "",
   },
   {
     id: "4",
@@ -33,7 +36,8 @@ const CoreProducts = [
     rating: 5,
     brand: "FUJIFILM",
     price: 3300,
-    quatity: 1,
+    quantity: 1,
+    category: "",
   },
   {
     id: "5",
@@ -42,7 +46,8 @@ const CoreProducts = [
     rating: 5,
     brand: "RIBBON",
     price: 98,
-    quatity: 1,
+    quantity: 1,
+    category: "",
   },
   {
     id: "6",
@@ -51,7 +56,8 @@ const CoreProducts = [
     rating: 5,
     brand: "EVOLIS",
     price: 1750,
-    quatity: 1,
+    quantity: 1,
+    category: "",
   },
   {
     id: "7",
@@ -60,7 +66,8 @@ const CoreProducts = [
     rating: 5,
     brand: "EVOLIS",
     price: 300,
-    quatity: 1,
+    quantity: 1,
+    category: "",
   },
   {
     id: "8",
@@ -69,7 +76,8 @@ const CoreProducts = [
     rating: 5,
     brand: "FUJIFILM",
     price: 3300,
-    quatity: 1,
+    quantity: 1,
+    category: "",
   },
 ];
 

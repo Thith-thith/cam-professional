@@ -1,44 +1,19 @@
-import { Component, For, Show, createResource, createSignal } from "solid-js";
-// import AllCoreProducts from "../../data/Core-Product";
-import CoreCard from "../../components/CoreProductCard";
+import { Component, For, Show, createResource } from "solid-js";
+// import CoreCard from "../../components/CoreProductCard";
 import { NavLink } from "@solidjs/router";
+import Cards from "../../components/cards/Cards";
 
 const fetchData = async () => {
   const res = await fetch("http://localhost:3000/CoreProducts");
   return res.json();
 };
 
-const CoreProducts: Component<{}> = (props) => {
+const Products: Component<{}> = (props) => {
   const [AllCoreProducts] = createResource(fetchData);
 
   return (
     <div>
       <div>
-        {/* <div class="bg-primary h-16 w-full"></div> */}
-        {/* <div class="flex justify-center">
-          <div class="mb-3 w-1/4 absolute top-[103px]">
-            <div class="relative justify-center mb-4 flex w-full flex-wrap items-stretch">
-              <input
-                type="search"
-                class="px-3 py-3 relative block w-[1px] min-w-0 flex-auto rounded-l-lg focus:outline-non bg-base-300 focus:outline-none"
-                // class="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
-                placeholder="Search"
-                aria-label="Search"
-                aria-describedby="button-addon3"
-              />
-
-              <button
-                class="py-3 bg-pink-400 px-6 font-bold text-white rounded-r-md"
-                // class="relative z-10 rounded-r border-2 border-primary px-6 py-2 text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
-                type="button"
-                id="button-addon3"
-                data-te-ripple-init
-              >
-                Search
-              </button>
-            </div>
-          </div>
-        </div> */}
         <div class="bg-white py-12 w-full">
           <h1 class="text-center text-[#98A2AE] font-bold text-5xl mt-6">
             All Products
@@ -125,7 +100,7 @@ const CoreProducts: Component<{}> = (props) => {
                 <Show when={AllCoreProducts()} fallback={<p>Loading...</p>}>
                   <For each={AllCoreProducts()}>
                     {(CoreProducts) => {
-                      return <CoreCard product={CoreProducts} />;
+                      return <Cards product={CoreProducts} />;
                     }}
                   </For>
                 </Show>
@@ -145,4 +120,4 @@ const CoreProducts: Component<{}> = (props) => {
   );
 };
 
-export default CoreProducts;
+export default Products;
