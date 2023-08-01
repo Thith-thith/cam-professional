@@ -28,6 +28,7 @@
     "json-server": "^0.17.3",
     "kute.js": "^2.2.4",
     "lottie-web": "^5.12.2",
-    "solid-js": "^1.7.6"
+    "solid-js": "^1.7.6",
+    "tailwindcss-animated": "^1.0.1"
   }
 }

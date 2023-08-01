@@ -9,10 +9,12 @@ import Contact from "./pages/contact";
 import Cart from "./pages/cart";
 import ProductDetail from "./pages/products/details";
 import Products from "./pages/products";
+import News from "./pages/news";
+import SinglePageNews from "./pages/news/singlePage";
 
 const App: Component = () => {
   return (
-    <div>
+    <section>
       <Navbar />
       <Routes>
         <Route path="/" component={Home} />
@@ -21,9 +23,11 @@ const App: Component = () => {
         <Route path="/cart" component={Cart} />
         <Route path="/products" component={Products} />
         <Route path="/products/:id?" component={ProductDetail} />
+        <Route path="/news" component={News} />
+        <Route path="/news/:id?" component={SinglePageNews} />
       </Routes>
       <Footer />
-    </div>
+    </section>
   );
 };
 

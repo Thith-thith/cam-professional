@@ -34,24 +34,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
-.about-bg-img {
-  background-image: url("/images/cool-background.svg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  height: 60vh;
-}
-.about-header-img {
-  background-image: url("/images/blob-scene-haikei.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 60vh;
-}
-.footer-bg-about-img {
-  background-image: url("/images/wave-haikei.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 1000px;
-}
+
 .bg-shopping-cart {
   background-image: url("/images/circle-scatter-haikei1.svg");
   background-repeat: no-repeat;
@@ -117,6 +100,24 @@ body {
 }
 .background-img {
   background-image: url("../public/images/banner.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.background-img-about {
+  background-image: url("../public/images/banner-2.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.news-background {
+  background-image: url("../public/images/news-background.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

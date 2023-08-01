@@ -11,18 +11,17 @@ interface Props {
 }
 const MemberCard: Component<Props> = ({ props }) => {
   return (
-    <div>
-      <div class="bg-base-200 rounded h-full">
-        <div class="md:py-8 py-2 px-10">
-          <div class="flex justify-center">
-            <img class="w-44" src={props.image} />
-          </div>
-        </div>
-        <div class="text-center px-2 py-8">
-          <h1 class="font-bold text-pink-500">{props.name}</h1>
-          <p class="text-sm text-gray-600">{props.position}</p>
-        </div>
-      </div>
+    <div class="text-center text-gray-500 dark:text-gray-400">
+      <img
+        class="mx-auto mb-4 w-52 h-52 rounded-full"
+        src={props.image}
+        alt="Bonnie Avatar"
+      />
+      <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <a href="#">{props.name}</a>
+      </h3>
+
+      <p>{props.position}</p>
     </div>
   );
 };
