@@ -500,7 +500,7 @@ export const Contact: Component = () => {
             ></textarea>
           </div>
           <button class="text-white rounded-xl bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 text-lg">
-            Button
+            Contact
           </button>
         </div>
       </div>

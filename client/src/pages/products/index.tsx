@@ -1,12 +1,11 @@
 import { Component, For, Show, createResource } from "solid-js";
 import Cards from "../../components/cards/Cards";
-import { NavLink } from "@solidjs/router";
 const fetchData = async () => {
   const res = await fetch("http://localhost:3000/CoreProducts");
   return res.json();
 };
 
-const Products: Component<{}> = (props) => {
+const Products: Component<{}> = () => {
   const [AllCoreProducts] = createResource(fetchData);
 
   return (
@@ -115,7 +114,7 @@ const Products: Component<{}> = (props) => {
                         name="color[]"
                         value="white"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-color-0"
@@ -130,7 +129,7 @@ const Products: Component<{}> = (props) => {
                         name="color[]"
                         value="beige"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-color-1"
@@ -146,7 +145,7 @@ const Products: Component<{}> = (props) => {
                         value="blue"
                         type="checkbox"
                         checked
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-color-2"
@@ -161,7 +160,7 @@ const Products: Component<{}> = (props) => {
                         name="color[]"
                         value="brown"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-color-3"
@@ -176,7 +175,7 @@ const Products: Component<{}> = (props) => {
                         name="color[]"
                         value="green"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-color-4"
@@ -191,7 +190,7 @@ const Products: Component<{}> = (props) => {
                         name="color[]"
                         value="purple"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-color-5"
@@ -244,7 +243,7 @@ const Products: Component<{}> = (props) => {
                         name="category[]"
                         value="new-arrivals"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-category-0"
@@ -259,7 +258,7 @@ const Products: Component<{}> = (props) => {
                         name="category[]"
                         value="sale"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-category-1"
@@ -275,7 +274,7 @@ const Products: Component<{}> = (props) => {
                         value="travel"
                         type="checkbox"
                         checked
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-category-2"
@@ -290,7 +289,7 @@ const Products: Component<{}> = (props) => {
                         name="category[]"
                         value="organization"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-category-3"
@@ -305,7 +304,7 @@ const Products: Component<{}> = (props) => {
                         name="category[]"
                         value="accessories"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-category-4"
@@ -358,7 +357,7 @@ const Products: Component<{}> = (props) => {
                         name="size[]"
                         value="2l"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-size-0"
@@ -373,7 +372,7 @@ const Products: Component<{}> = (props) => {
                         name="size[]"
                         value="6l"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-size-1"
@@ -388,7 +387,7 @@ const Products: Component<{}> = (props) => {
                         name="size[]"
                         value="12l"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-size-2"
@@ -403,7 +402,7 @@ const Products: Component<{}> = (props) => {
                         name="size[]"
                         value="18l"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-size-3"
@@ -418,7 +417,7 @@ const Products: Component<{}> = (props) => {
                         name="size[]"
                         value="20l"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-size-4"
@@ -434,7 +433,7 @@ const Products: Component<{}> = (props) => {
                         value="40l"
                         type="checkbox"
                         checked
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-mobile-size-5"
@@ -452,7 +451,7 @@ const Products: Component<{}> = (props) => {
       </div>
 
       <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
+        <div class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-6">
           <h1 class="text-4xl font-bold tracking-tight text-gray-900">
             Products
           </h1>
@@ -595,7 +594,7 @@ const Products: Component<{}> = (props) => {
                         name="category[]"
                         value="new-arrivals"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-category-0"
@@ -610,7 +609,7 @@ const Products: Component<{}> = (props) => {
                         name="category[]"
                         value="sale"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-category-1"
@@ -626,7 +625,7 @@ const Products: Component<{}> = (props) => {
                         value="travel"
                         type="checkbox"
                         checked
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-category-2"
@@ -641,7 +640,7 @@ const Products: Component<{}> = (props) => {
                         name="category[]"
                         value="organization"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-category-3"
@@ -656,7 +655,7 @@ const Products: Component<{}> = (props) => {
                         name="category[]"
                         value="accessories"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-category-4"
@@ -671,7 +670,7 @@ const Products: Component<{}> = (props) => {
                         name="category[]"
                         value="accessories"
                         type="checkbox"
-                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                        class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/90"
                       />
                       <label
                         for="filter-category-4"

@@ -41,7 +41,7 @@ export const Banner: Component = () => {
                 />
               </div>
             </div>
-            <div class="grid md:grid-cols-4 gap-4 mt-12">
+            <div class=" grid md:grid-cols-4 gap-4 mt-12">
               <For each={NewsData}>
                 {(NewData) => {
                   return <NewsCard props={NewData} />;

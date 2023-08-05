@@ -1,11 +1,13 @@
-import { Component } from "solid-js";
+import { Component, For } from "solid-js";
+import RelatedCard from "../../components/cards/RelatedCard";
+import NewsData from "../../data/News";
 
 const SinglePageNews: Component = () => {
   return (
     <>
       <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">
-        <div class="grid grid-cols-5 justify-between px-4 mx-auto max-w-screen-xl ">
-          <article class="col-span-4 mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+        <div class="grid grid-cols-3  gap-3 justify-between px-4 mx-auto max-w-screen-xl ">
+          <article class="col-span-2 mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
             <header class="mb-4 lg:mb-6 not-format">
               <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
                 King Norodom Sihamoni’s Birthday
@@ -506,9 +508,13 @@ const SinglePageNews: Component = () => {
               </article>
             </section>
           </article>
-          {/* <div class="col-span-auto w-full bg-gray-50 p-3 rounded-xl h-60">
-            <h1>hello world</h1>
-          </div> */}
+          <div class="col-span-auto w-full p-3 rounded-xl ">
+            <For each={NewsData}>
+              {(NewData) => {
+                return <RelatedCard props={NewData} />;
+              }}
+            </For>
+          </div>
         </div>
       </main>
     </>

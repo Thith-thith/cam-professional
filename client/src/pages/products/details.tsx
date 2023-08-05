@@ -1,9 +1,8 @@
-import { Component, For, Show, createEffect, createResource } from "solid-js";
-import CoreProducts from "../../data/Core-Product";
+import { Component, createEffect, createResource, For } from "solid-js";
 import { useParams } from "@solidjs/router";
 import { useCartContext } from "../../context/CartContext";
-import { NavLink } from "@solidjs/router";
-import Cards from "../../components/cards/Cards";
+import { useNavigate } from "@solidjs/router";
+import Image from "../../components/Image";
 
 type Product = {
   id: string;
@@ -21,6 +20,7 @@ const fetchProduct = async (id: string) => {
   return res.json();
 };
 const ProductDetail: Component<{}> = (props) => {
+  const navigate = useNavigate();
   const { addToCart, cartItems } = useCartContext();
   const params = useParams<{ id: string }>();
   const [item] = createResource(params.id, fetchProduct);
@@ -178,7 +178,7 @@ const ProductDetail: Component<{}> = (props) => {
 
     <div class="bg-white">
       <div class="pt-6">
-        {/* <nav aria-label="Breadcrumb">
+        <nav aria-label="Breadcrumb">
           <ol
             role="list"
             class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
@@ -186,7 +186,7 @@ const ProductDetail: Component<{}> = (props) => {
             <li>
               <div class="flex items-center">
                 <a href="#" class="mr-2 text-sm font-medium text-gray-900">
-                  Men
+                  Accessories
                 </a>
                 <svg
                   width="16"
@@ -203,7 +203,7 @@ const ProductDetail: Component<{}> = (props) => {
             <li>
               <div class="flex items-center">
                 <a href="#" class="mr-2 text-sm font-medium text-gray-900">
-                  Clothing
+                  Printer
                 </a>
                 <svg
                   width="16"
@@ -224,43 +224,43 @@ const ProductDetail: Component<{}> = (props) => {
                 aria-current="page"
                 class="font-medium text-gray-500 hover:text-gray-600"
               >
-                Basic Tee 6-Pack
+                Ribbon
               </a>
             </li>
           </ol>
-        </nav> */}
+        </nav>
 
         <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-4 lg:px-8">
-          <div class="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block">
-            <img
-              src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg"
-              alt="Two each of gray, white, and black shirts laying flat."
-              class="h-full w-full object-cover object-center"
-            />
-          </div>
+          <Image
+            image="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg"
+            name="undefined"
+            width="undefined"
+            heigh="undefined"
+            is_scale={true}
+          />
           <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-4">
-            <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-              <img
-                src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg"
-                alt="Model wearing plain black basic tee."
-                class="h-full w-full object-cover object-center"
-              />
-            </div>
-            <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
-              <img
-                src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg"
-                alt="Model wearing plain gray basic tee."
-                class="h-full w-full object-cover object-center"
-              />
-            </div>
-          </div>
-          <div class="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-            <img
-              src="https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg"
-              alt="Model wearing plain white basic tee."
-              class="h-full w-full object-cover object-center"
+            <Image
+              image="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg"
+              name="undefined"
+              width="undefined"
+              heigh="undefined"
+              is_scale={true}
+            />
+            <Image
+              image="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg"
+              name="undefined"
+              width="undefined"
+              heigh="undefined"
+              is_scale={true}
             />
           </div>
+          <Image
+            image="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg"
+            name="undefined"
+            width="undefined"
+            heigh="undefined"
+            is_scale={true}
+          />
         </div>
 
         <div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
@@ -344,10 +344,7 @@ const ProductDetail: Component<{}> = (props) => {
                   </svg>
                 </div>
                 <p class="sr-only">4 out of 5 stars</p>
-                <a
-                  href="#"
-                  class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
-                >
+                <a href="#" class="ml-3 text-sm font-medium text-primary">
                   117 reviews
                 </a>
               </div>
@@ -567,13 +564,26 @@ const ProductDetail: Component<{}> = (props) => {
                 </fieldset>
               </div> */}
 
-              <button
-                type="submit"
-                onClick={() => handleAddTocart(item())}
-                class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              >
-                Add to cart
-              </button>
+              {!isInCart() ? (
+                <button
+                  type="submit"
+                  onClick={() => handleAddTocart(item())}
+                  class="mt-10 flex w-full items-center justify-center rounded-full border border-transparent bg-primary px-8 py-3 text-base font-medium text-white hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  Add to cart
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(`/cart`);
+                  }}
+                  class="mt-10 flex w-full items-center justify-center rounded-full border border-transparent bg-danger px-8 py-3 text-base font-medium text-white hover:bg-danger/90 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  View Cart
+                </button>
+              )}
             </form>
           </div>
 
